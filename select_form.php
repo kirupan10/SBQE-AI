@@ -21,7 +21,7 @@
 
 </head>
 <body>
-    <?php include "backend/frontend/navbar.php";?>
+    <?php include "backend/navbar.php";?>
 
 <div class="wrapper">
 
@@ -29,11 +29,13 @@
         <div class="section">
          <div class="container tim-container">
             <div class="tim-title">
-                <h2>Basic Elements</h2>
+                <h2>School Based Quality Education & Assessment Indicators</h2>
             </div>
 
                 <div class="tim-title">
-                    <h3>Dropdown</h3>
+                    <h3> School : <?php echo "School Name"; ?></h3>
+                    <p> Form <?php echo "Form details"; ?></p>
+                    <p> Small explaination about what is activities and how to select/use guide <br> lines </p>
                     <br />
                         <div id="navbar-dropdown">
                             <nav class="navbar navbar-default">
@@ -46,7 +48,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                   </button>
-                                  <a class="navbar-brand" href="#">Dropdown Colors</a>
+                                  <a class="navbar-brand" href="#">Forms</a>
                                 </div>
 
                                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -84,7 +86,7 @@
 
 
 
-<?php include "backend/frontend/footer.php";?>
+<?php include "backend/footer.php";?>
 </div>
 
 

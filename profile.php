@@ -22,7 +22,7 @@
       
 </head>
 <body>
-<?php include "backend/frontend/navbar.php";?>
+<?php include "backend/navbar.php";?>
     
     <div class="wrapper">
         <div class="profile-background"> 
@@ -112,7 +112,7 @@
         </div>
     </div> 
 
-    <?php include "backend/frontend/footer.php";?>
+    <?php include "backend/footer.php";?>
 </body>
 
 <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>

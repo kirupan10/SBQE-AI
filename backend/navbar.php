@@ -12,7 +12,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                      <a class="navbar-brand" href="#">SBQE & AI</a>
+                      <a class="navbar-brand" href="./">SBQE & AI</a>
                     </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -28,19 +28,19 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="form.php">
                                     <i class=""></i>
                                     Forms
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="profile.php">
                                     <i class=""></i>
-                                    Schools
+                                    Profile
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="logout.php">
                                     <i class=""></i>
                                     Logout
                                 </a>

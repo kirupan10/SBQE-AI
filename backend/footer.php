@@ -1,10 +1,10 @@
-    <footer class="footer-demo section-dark">
+<footer class="footer-demo section-dark">
     <div class="container">
         <nav class="pull-left">
             <ul>
 
                 <li>
-                    <a href="http://www.creative-tim.com">
+                    <a href="">
                         Developer
                     </a>
                 </li>

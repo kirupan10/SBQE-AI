@@ -21,7 +21,7 @@
 
 </head>
 <body>
-    <?php include "backend/frontend/navbar.php";?>
+    <?php include "backend/navbar.php";?>
 
 <div class="wrapper">
 
@@ -29,7 +29,7 @@
         <div class="section">
          <div class="container tim-container">
             <div class="tim-title">
-                <h2>Basic Elements</h2>
+                <h2>School Based Quality Education & Assessment Indicators</h2>
             </div>
 
          
@@ -38,7 +38,9 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="tim-title">
-                            <h3>Labels </h3>
+                    <h3> School : <?php echo "School Name"; ?></h3>
+                    <p> Form <?php echo "Form details"; ?></p>
+                    <p> Small explaination about what is activities and how to select/use guide <br> lines </p>
                         </div>
                         <span class="label label-default">Default</span>
                         <span class="label label-primary">Primary</span>
@@ -162,7 +164,7 @@
 
 
 
-<?php include "backend/frontend/footer.php";?>
+<?php include "backend/footer.php";?>
 </div>
 
 
