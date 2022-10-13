@@ -5,7 +5,7 @@
     <link rel="icon" type="image/png" href="assets/paper_img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title></title>
+    <title>SBQE & AI - Activities</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -29,7 +29,7 @@
         <div class="section">
          <div class="container tim-container">
             <div class="tim-title">
-                <h2>School Based Quality Education & Assessment Indicators</h2>
+                <h3><b>School Based Quality Education & Assessment Indicators</b></h3>
             </div>
 
                 <div class="tim-title">
@@ -77,12 +77,13 @@
                         </div><!--  end navbar -->
                 </div>
                 <br />
+                <div class="tim-title">
+                    <h3></h3>
+                </div>
             </div> <!-- end menu-dropdown -->
 
             </div>
     </div>
-
-</div>
 </div>
 
 <?php include "backend/footer.php";?>

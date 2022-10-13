@@ -5,7 +5,7 @@
     <link rel="icon" type="image/png" href="assets/paper_img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title></title>
+    <title>SBQE & AI -  Form</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -29,7 +29,7 @@
         <div class="section">
          <div class="container tim-container">
             <div class="tim-title">
-                <h2>School Based Quality Education & Assessment Indicators</h2>
+                <h3><b>School Based Quality Education & Assessment Indicators</b></h3>
             </div>
 
                 
@@ -40,14 +40,14 @@
                     </div>
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <button href="#fakelink" class="btn btn-simple">Default</button>
-                            <button href="#fakelink" class="btn btn-simple">Default</button>
-                            <button href="#fakelink" class="btn btn-simple">Default</button>
-                            <button href="#fakelink" class="btn btn-simple">Default</button>
-                            <button href="#fakelink" class="btn btn-simple">Default</button>
-                            <button href="#fakelink" class="btn btn-simple">Default</button>
-                            <button href="#fakelink" class="btn btn-simple">Default</button>
-                            <button href="#fakelink" class="btn btn-simple">Default</button>
+                            <a href="profile.php" class="btn btn-simple">1. Student Achievement </a> <br>
+                            <a href="profile.php" class="btn btn-simple">2. Learning, Teaching and Assessment</a> <br>
+                            <a href="profile.php" class="btn btn-simple">3. Formal Curriculum Management</a> <br>
+                            <a href="profile.php" class="btn btn-simple">4. Co - curricular Activities</a> <br>
+                            <a href="profile.php" class="btn btn-simple">5. Student Welfare</a> <br>
+                            <a href="profile.php" class="btn btn-simple">6. Leadership and Management</a> <br>
+                            <a href="profile.php" class="btn btn-simple">7. Physical Resource Management</a> <br>
+                            <a href="profile.php" class="btn btn-simple">8. School and Community</a> <br>
                         </div>
                     </div>
                 </div>

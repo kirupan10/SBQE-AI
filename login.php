@@ -29,7 +29,7 @@ if(isset($_POST['but_submit'])){
 ?>
 <html>
     <head>
-        <title>system-login</title>
+        <title>SBQE & AI - Login</title>
         <link href="assets/css/styleloginform.css" rel="stylesheet" type="text/css">
     </head>
     <body>
