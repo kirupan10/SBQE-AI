@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -36,7 +38,7 @@
                             <img src="assets/paper_img/chet_faker_2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                         </div>
                         <div class="name">
-                            <h4>Chet Faker<br /><small>Music Producer</small></h4>
+                            <h4><?php echo $_SESSION['username']; ?><br /><small>Teacher Grade <?php echo $_SESSION['grade']; ?></small></h4>
                         </div>
                     </div>
                 </div>

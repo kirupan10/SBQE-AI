@@ -1,3 +1,67 @@
+<?php 
+
+
+session_start();
+
+$host = "localhost"; /* Host name */
+$user = "root"; /* User */
+$password = ""; /* Password */
+$dbname = "sbqeai"; /* Database name */
+
+$conn = mysqli_connect($host, $user, $password,$dbname);
+// Check connection
+if (!$conn) {
+ die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT name,School_ID,grade FROM user WHERE email ='{$_SESSION['email']}' LIMIT 1 ";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $username = "". $row["name"]. "<br>";   // The value we usually set is the primary key
+         $school_id = "". $row["School_ID"]. "<br>";  // The value we usually set is the primary key
+         $grade = "". $row["grade"]. "<br>"; }  // The value we usually set is the primary key
+         
+        } else { echo "0 results"; } // While loop must be terminated 
+
+
+
+
+
+
+$sql1 = "SELECT School_ID FROM user WHERE email ='{$_SESSION['email']}' LIMIT 1 ";
+$result1 = $conn->query($sql1);
+
+if ($result1->num_rows > 0) {
+    // output data of each row
+    while($row = $result1->fetch_assoc()) { 
+         $school_id = "". $row["School_ID"]. "<br>"; }  // The value we usually set is the primary key
+         
+        } else { echo "0 results"; } // While loop must be terminated 
+
+ $school_id;
+
+$sql_school = "SELECT School_Name FROM schools_details WHERE School_ID ='$school_id' LIMIT 1";
+$result_school = $conn->query($sql_school);
+
+if ($result_school->num_rows > 0) {
+    // output data of each row
+    while($row = $result_school->fetch_assoc()) { 
+         $school_name = "". $row["School_Name"]. "<br>"; }  // The value we usually set is the primary key
+         
+        } else { echo "0 results"; } // While loop must be terminated 
+
+  $_SESSION['school_name'] =  $school_name;
+  $_SESSION['school_id'] =  $school_id;
+  $_SESSION['username'] =  $username;
+  $_SESSION['grade'] =  $grade;
+
+$conn->close();
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -31,23 +95,22 @@
             <div class="tim-title">
                 <h3><b>School Based Quality Education & Assessment Indicators</b></h3>
             </div>
-
-                
-                        <div class="tim-title">
-                    <h3> School : <?php echo "School Name"; ?></h3>
-                    <p> Form <?php echo "Form details"; ?></p>
-                    <p> Small explaination about what is activities and how to select/use guide <br> lines </p>
+                    <div class="tim-title">
+                        <h3> Hi, <?php echo $username;?></h3>
+                        <h3> School : <?php echo $school_name ;   ?></h3>
+                        <p>  Grade : <?php echo $grade ;  ?></p>
+                        <p> Small explaination about what is activities and how to select/use guide <br> lines </p>
                     </div>
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <a href="profile.php" class="btn btn-simple">1. Student Achievement </a> <br>
-                            <a href="profile.php" class="btn btn-simple">2. Learning, Teaching and Assessment</a> <br>
-                            <a href="profile.php" class="btn btn-simple">3. Formal Curriculum Management</a> <br>
-                            <a href="profile.php" class="btn btn-simple">4. Co - curricular Activities</a> <br>
-                            <a href="profile.php" class="btn btn-simple">5. Student Welfare</a> <br>
-                            <a href="profile.php" class="btn btn-simple">6. Leadership and Management</a> <br>
-                            <a href="profile.php" class="btn btn-simple">7. Physical Resource Management</a> <br>
-                            <a href="profile.php" class="btn btn-simple">8. School and Community</a> <br>
+                            <a href="select_form.php?form=1" class="btn btn-simple">1. Student Achievement </a> <br>
+                            <a href="select_form.php?form=2" class="btn btn-simple">2. Learning, Teaching and Assessment</a> <br>
+                            <a href="select_form.php?form=3" class="btn btn-simple">3. Formal Curriculum Management</a> <br>
+                            <a href="select_form.php?form=4" class="btn btn-simple">4. Co - curricular Activities</a> <br>
+                            <a href="select_form.php?form=5" class="btn btn-simple">5. Student Welfare</a> <br>
+                            <a href="select_form.php?form=6" class="btn btn-simple">6. Leadership and Management</a> <br>
+                            <a href="select_form.php?form=7" class="btn btn-simple">7. Physical Resource Management</a> <br>
+                            <a href="select_form.php?form=8" class="btn btn-simple">8. School and Community</a> <br>
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,30 @@
+<?php 
+session_start();
+$host = "localhost"; /* Host name */
+$user = "root"; /* User */
+$password = ""; /* Password */
+$dbname = "sbqeai"; /* Database name */
+
+$conn = mysqli_connect($host, $user, $password,$dbname);
+// Check connection
+if (!$conn) {
+ die("Connection failed: " . mysqli_connect_error());
+}
+
+echo $form_number =$_REQUEST['form']; // output 2489
+
+  $_SESSION['form_number'] =  $form_number;
+$i = 0;
+
+
+
+
+$sql = "SELECT Section FROM form_selection WHERE school_id ='{$_SESSION['school_id']}' ";
+$result = $conn->query($sql);
+
+$conn->close();
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,7 +32,7 @@
     <link rel="icon" type="image/png" href="assets/paper_img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>SBQE & AI - Form Selection</title>
+    <title>SBQE & AI - School Selection</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -33,8 +60,8 @@
             </div>
 
                 <div class="tim-title">
-                    <h3> School : <?php echo "School Name"; ?></h3>
-                    <p> Form <?php echo "Form details"; ?></p>
+                    <h3> School : <?php echo $_SESSION["school_name"]; ?></h3>
+                    <p> Form <?php echo $form_number; ?> Replace with assignmet name</p>
                     <p> Small explaination about what is activities and how to select/use guide <br> lines </p>
                     <br />
                         <div id="navbar-dropdown">
@@ -48,7 +75,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                   </button>
-                                  <a class="navbar-brand" href="#">Forms</a>
+                                  <a class="navbar-brand" href="#">Select Section </a>
                                 </div>
 
                                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,17 +83,28 @@
                                   <ul class="nav navbar-nav pull-right">
 <!--                                       default dropdown -->
                                     <li class="dropdown">
-                                      <buttonn href="#" class="dropdown-toggle btn" data-toggle="dropdown">Default <b class="caret"></b></button>
+                                      <buttonn href="#" class="dropdown-toggle btn" data-toggle="dropdown">Section<b class="caret"></b></button>
 <!--                                  You can add classes for different colours on the next element -->
-                                      <ul class="dropdown-menu dropdown-menu-right">
-                                        <li class="dropdown-header">Dropdown header</li>
-                                        <li><a href="profile.php">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">One more separated link</a></li>
+
+         
+
+
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                        
+ <?php                                        if ($result->num_rows > 0) {
+    // output data of each row
+    $v = 0;
+    while($row = $result->fetch_assoc()) { $i++;?>
+
+                                        <li onclick="location.href='select_activities.php?section=<?php echo $i; ?>';"><a href=""> <?php echo "". $row["Section"]. "<br>"; }  // The value we usually set is the primary key 
+                                         ?></a></li>
+
+                                        
+
+                                        <?php  } else { echo "0 results"; } // While loop must be terminated ?>
+
+
+                                        
                                       </ul>
                                     </li>
                                   </ul>
@@ -85,6 +123,7 @@
             </div>
     </div>
 </div>
+
 
 
 
