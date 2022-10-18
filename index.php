@@ -21,9 +21,9 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) { 
         
-         $username = "". $row["name"]. "<br>";   // The value we usually set is the primary key
-         $school_id = "". $row["School_ID"]. "<br>";  // The value we usually set is the primary key
-         $grade = "". $row["grade"]. "<br>"; }  // The value we usually set is the primary key
+         $username = $row["name"];   // The value we usually set is the primary key
+         $school_id = $row["School_ID"];  // The value we usually set is the primary key
+         $grade = $row["grade"]; }  // The value we usually set is the primary key
          
         } else { echo "0 results"; } // While loop must be terminated 
 
@@ -38,7 +38,7 @@ $result1 = $conn->query($sql1);
 if ($result1->num_rows > 0) {
     // output data of each row
     while($row = $result1->fetch_assoc()) { 
-         $school_id = "". $row["School_ID"]. "<br>"; }  // The value we usually set is the primary key
+         $school_id = $row["School_ID"]; }  // The value we usually set is the primary key
          
         } else { echo "0 results"; } // While loop must be terminated 
 
@@ -50,7 +50,7 @@ $result_school = $conn->query($sql_school);
 if ($result_school->num_rows > 0) {
     // output data of each row
     while($row = $result_school->fetch_assoc()) { 
-         $school_name = "". $row["School_Name"]. "<br>"; }  // The value we usually set is the primary key
+         $school_name = $row["School_Name"]; }  // The value we usually set is the primary key
          
         } else { echo "0 results"; } // While loop must be terminated 
 
