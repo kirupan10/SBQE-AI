@@ -16,7 +16,7 @@ $i = 0;
 
 
 
-$sql = "SELECT Section FROM form_selection WHERE school_id ='{$_SESSION['school_id']}' ";
+$sql = "SELECT subject,activity_number FROM student_achievement_secondary_subjects";
 $result = $conn->query($sql);
 
 $conn->close();
@@ -93,7 +93,7 @@ $conn->close();
     $v = 0;
     while($row = $result->fetch_assoc()) { $i++;?>
 
-                                        <li onclick="location.href='select_activities.php?section=<?php echo $i; ?>';"><a href=""> <?php echo "". $row["Section"]. "<br>"; }  // The value we usually set is the primary key 
+                                        <li onclick="location.href='function_selection.php?function=<?php echo $i; ?>';"><a href=""> <?php echo "". $row["activity_number"]. " : "."". $row["subject"]. "<br>"; }  // The value we usually set is the primary key 
                                          ?></a></li>
 
                                         
