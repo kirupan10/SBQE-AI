@@ -1,11 +1,7 @@
 <?php 
 
-session_start();
-if($_SESSION["loggedIn"] != true){
-    echo 'not logged in';
-    header("Location: login.php");
-    exit;
-}
+include "backend/function_loggedin.php";
+
 
 
 include "backend/evaluator_function_primary.php"; 

@@ -1,5 +1,5 @@
 <?php 
-session_start();
+include "backend/function_loggedin.php";
 $host = "localhost"; /* Host name */
 $user = "root"; /* User */
 $password = ""; /* Password */
@@ -13,11 +13,12 @@ if (!$conn) {
 
 echo $form_number =$_REQUEST['form']; // output 2489
 
+
   $_SESSION['form_number'] =  $form_number;
 $i = 0;
 
 
-include "backend/function_loggedin.php";
+
 
 
 $sql = "SELECT Section FROM form_selection WHERE school_id ='{$_SESSION['school_id']}' ";

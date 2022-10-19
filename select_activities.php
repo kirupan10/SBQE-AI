@@ -1,5 +1,5 @@
 <?php 
-session_start();
+include "backend/function_loggedin.php";
 $host = "localhost"; /* Host name */
 $user = "root"; /* User */
 $password = ""; /* Password */
@@ -11,16 +11,16 @@ if (!$conn) {
  die("Connection failed: " . mysqli_connect_error());
 }
 
-echo $section_number =$_REQUEST['section']; // output 2489 
-echo $_SESSION['school_id'];
-echo $_SESSION['form_number'];
+ $section_number =$_REQUEST['section']; // output 2489 
+ $_SESSION['school_id'];
+ $_SESSION['form_number'];
 $_SESSION['section_number'] = $section_number;
-echo $_SESSION['section_number'];
+ $_SESSION['section_number'];
 
 $i = 0;
 
 
-include "backend/function_loggedin.php";
+
 
 $sql = "SELECT Activity FROM select_activity WHERE school_id ='{$_SESSION['school_id']}'and Form = '{$_SESSION['form_number']}' and Section_Number =  '$section_number' ";
 $result = $conn->query($sql);
@@ -99,7 +99,7 @@ $conn->close();
     $v = 0;
     while($row = $result->fetch_assoc()) { $i++;?>
 
-                                        <li onclick="location.href='function_selection.php?Activity=<?php echo $i; ?>';"><a href=""> <?php echo "". $row["Activity"]. "<br>"; }  // The value we usually set is the primary key 
+                                        <li onclick="location.href='backend/functions_selection.php?Activity=<?php echo $i; ?>';"><a href=""> <?php echo "". $row["Activity"]. "<br>"; }  // The value we usually set is the primary key 
                                          ?></a></li>
 
                                         

@@ -1,6 +1,4 @@
-<?php session_start(); 
-
-session_start();
+<?php 
 include "backend/function_loggedin.php";
 
 

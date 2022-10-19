@@ -1,8 +1,4 @@
-<?php 
-
-
-session_start();
-
+<?php
 include "backend/function_loggedin.php";
 
 $host = "localhost"; /* Host name */
