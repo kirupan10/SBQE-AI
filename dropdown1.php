@@ -21,7 +21,7 @@
 
 </head>
 <body>
-    <?php include "backend/frontend/navbar.php";?>
+    <?php include "backend/navbar.php";?>
 
 <div class="wrapper">
 
@@ -79,6 +79,9 @@
                         </div><!--  end navbar -->
                 </div>
                 <br />
+                <div class="tim-title">
+                    <h3></h3>
+                </div>
             </div> <!-- end menu-dropdown -->
 
             </div>
@@ -88,7 +91,7 @@
 
 
 
-<?php include "backend/frontend/footer.php";?>
+<?php include "backend/footer.php";?>
 </div>
 
 
