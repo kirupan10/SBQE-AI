@@ -14,6 +14,8 @@ if (!$conn) {
 echo $section_number =$_REQUEST['section']; // output 2489 
 echo $_SESSION['school_id'];
 echo $_SESSION['form_number'];
+$_SESSION['section_number'] = $section_number;
+echo $_SESSION['section_number'];
 
 $i = 0;
 
@@ -97,7 +99,7 @@ $conn->close();
     $v = 0;
     while($row = $result->fetch_assoc()) { $i++;?>
 
-                                        <li onclick="location.href='select_activities.php?Activity=<?php echo $i; ?>';"><a href=""> <?php echo "". $row["Activity"]. "<br>"; }  // The value we usually set is the primary key 
+                                        <li onclick="location.href='function_selection.php?Activity=<?php echo $i; ?>';"><a href=""> <?php echo "". $row["Activity"]. "<br>"; }  // The value we usually set is the primary key 
                                          ?></a></li>
 
                                         
