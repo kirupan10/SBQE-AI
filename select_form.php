@@ -17,6 +17,7 @@ echo $form_number =$_REQUEST['form']; // output 2489
 $i = 0;
 
 
+include "backend/function_loggedin.php";
 
 
 $sql = "SELECT Section FROM form_selection WHERE school_id ='{$_SESSION['school_id']}' ";

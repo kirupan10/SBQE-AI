@@ -18,7 +18,7 @@ echo $_SESSION['form_number'];
 $i = 0;
 
 
-
+include "backend/function_loggedin.php";
 
 $sql = "SELECT Activity FROM select_activity WHERE school_id ='{$_SESSION['school_id']}'and Form = '{$_SESSION['form_number']}' and Section_Number =  '$section_number' ";
 $result = $conn->query($sql);

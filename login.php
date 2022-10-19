@@ -18,6 +18,7 @@ if(isset($_POST['but_submit'])){
 
         if($count > 0){
             $_SESSION['email'] = $uname;
+            $_SESSION['loggedIn'] = true;
             header('Location: index.php');
         }else{
             echo "Invalid username and password";

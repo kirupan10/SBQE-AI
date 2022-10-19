@@ -3,6 +3,8 @@
 
 session_start();
 
+include "backend/function_loggedin.php";
+
 $host = "localhost"; /* Host name */
 $user = "root"; /* User */
 $password = ""; /* Password */
@@ -13,6 +15,12 @@ $conn = mysqli_connect($host, $user, $password,$dbname);
 if (!$conn) {
  die("Connection failed: " . mysqli_connect_error());
 }
+
+
+if( !isset($_SESSION['email']) ){
+    die( "Login required." );
+}
+
 
 $sql = "SELECT name,School_ID,grade FROM user WHERE email ='{$_SESSION['email']}' LIMIT 1 ";
 $result = $conn->query($sql);

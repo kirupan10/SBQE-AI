@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php session_start(); 
+
+session_start();
+include "backend/function_loggedin.php";
+
+
+?>
 
 <!doctype html>
 <html lang="en">
