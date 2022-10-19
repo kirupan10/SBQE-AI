@@ -276,14 +276,14 @@ obtained</th>
   <tr>
     <td></td>
     <td>Name of the evaluator</td>
-    <td><input type="text"  autocomplete="off" name="evaluator_name" value="<?php $evaluator_name_value; ?>" required ></td>
+    <td><input type="text"  autocomplete="off" name="evaluator_name" value="<?php echo $evaluator_name_value; ?>" required ></td>
     <td></td>
   </tr>
 
   <tr class="active-row" >
     <td></td>
     <td>Date</td>
-    <td><input type="date" name="date" value="<?php echo $evaluator_date; ?>" autocomplete="off" /></td>
+    <td><input type="date" name="date" value="<?php echo $evaluator_date; ?>" required /></td>
     <td></td>
     
   </tr>
