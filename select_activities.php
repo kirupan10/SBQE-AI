@@ -17,6 +17,10 @@ if (!$conn) {
 $_SESSION['section_number'] = $section_number;
  $_SESSION['section_number'];
 
+ if ($section_number == 1) {
+    header('Location: primary_section_form.php');
+}
+
 $i = 0;
 
 

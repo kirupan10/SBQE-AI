@@ -43,7 +43,8 @@ if(isset($_POST['but_submit'])){
         <div class="container">
             <form method="post" action="">
                 <div id="div_login">
-                    <h1>Login</h1>
+
+                    <h1>SBQE & AI - <br>USER : Login</h1>
                     <div>
                         <input type="text" class="textbox" id="txt_uname" name="txt_uname" placeholder="Email Address" />
                     </div>

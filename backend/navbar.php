@@ -22,9 +22,9 @@
                       </ul>
                       <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="#">
+                                <a href="./">
                                     <i class=""></i>
-                                    Profile
+                                    Home
                                 </a>
                             </li>
                             <li>

@@ -13,6 +13,10 @@ if (!$conn) {
 
 echo $form_number =$_REQUEST['form']; // output 2489
 
+if ($form_number != 1) {
+    header('Location: select_activities.php?section=2');
+}
+
 
   $_SESSION['form_number'] =  $form_number;
 $i = 0;
