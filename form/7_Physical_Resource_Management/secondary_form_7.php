@@ -16,7 +16,7 @@ $i = 0;
 
 
 
-$sql = "SELECT subject,activity_number FROM student_achievement_secondary_subjects";
+$sql = "SELECT Criteria_ID,Criteria FROM physical_resource_management";
 $result = $conn->query($sql);
 
 $conn->close();
@@ -93,7 +93,7 @@ $conn->close();
     $v = 0;
     while($row = $result->fetch_assoc()) { $i++;?>
 
-                                        <li onclick="location.href='function_selection.php?function=<?php echo $i; ?>';"><a href=""> <?php echo "". $row["activity_number"]. " : "."". $row["subject"]. "<br>"; }  // The value we usually set is the primary key 
+                                        <li onclick="location.href='function_selection.php?function=<?php echo $i; ?>';"><a href=""> <?php echo "". $row["Criteria_ID"]. " : "."". $row["Criteria"]. "<br>"; }  // The value we usually set is the primary key 
                                          ?></a></li>
 
                                         
