@@ -16,7 +16,7 @@ $i = 0;
 
 
 
-$sql = "SELECT Criteria_Number,Criteria FROM formal_curriculum_management_indicators";
+$sql = "SELECT Criteria_Number,Criteria FROM formal_curriculum_management";
 $result = $conn->query($sql);
 
 $conn->close();

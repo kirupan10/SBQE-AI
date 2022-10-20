@@ -16,7 +16,7 @@ $i = 0;
 
 
 
-$sql = "SELECT Activity,Indicators FROM learning_teaching_and_assessment_indicators";
+$sql = "SELECT Activity,Indicators FROM learning_teaching_and_assessment";
 $result = $conn->query($sql);
 
 $conn->close();
