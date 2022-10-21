@@ -1,18 +1,16 @@
 <?php 
 session_start();
- echo $function_number =$_REQUEST['function']; 
+ $Main_form_number =$_REQUEST['function']; // output 2489
 
 
-	if ($function_number > 1 && $function_number < 7  ) {
-	header('Location: main_subjects_form.php');}
+if ($Main_form_number == 1 ) { header('Location: curricular_4.1.php'); }
 
-	if ($function_number > 6 && $function_number < 12  ) {
-	header('Location: other_subjects_form.php');}
+if ($Main_form_number == 2 ) { header('Location: curricular_4.2.php'); }
 
-	if ($function_number > 11 && $function_number < 18  ) {
-	header('Location:  main_subjects_form.php');}
+if ($Main_form_number == 3 ) { header('Location: curricular_4.3.php'); }
 
-	if ($function_number >= 18) {
-		header('Location: optional_subjects_form.php');}
+if ($Main_form_number == 4 ) { header('Location: curricular_4.4.php'); }
+
+if ($Main_form_number == 5 ) { header('Location: curricular_4.5.php'); }
 
 ?>
