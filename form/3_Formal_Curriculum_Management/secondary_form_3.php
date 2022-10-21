@@ -16,7 +16,7 @@ $i = 0;
 
 
 
-$sql = "SELECT Criteria_Number,Criteria FROM formal_curriculum_management";
+$sql = "SELECT Criteria_ID,Criteria FROM formal_curriculum_management";
 $result = $conn->query($sql);
 
 $conn->close();
@@ -93,7 +93,7 @@ $conn->close();
     $v = 0;
     while($row = $result->fetch_assoc()) { $i++;?>
 
-                                        <li onclick="location.href='function_selection.php?function=<?php echo $i; ?>';"><a href=""> <?php echo "". $row["Criteria_Number"]. " : "."". $row["Criteria"]. "<br>"; }  // The value we usually set is the primary key 
+                                        <li onclick="location.href='function_selection.php?function=<?php echo $i; ?>';"><a href=""> <?php echo "". $row["Criteria_ID"]. " : "."". $row["Criteria"]. "<br>"; }  // The value we usually set is the primary key 
                                          ?></a></li>
 
                                         

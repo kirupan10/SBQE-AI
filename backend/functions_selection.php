@@ -19,7 +19,7 @@ if ($Main_form_number == 1 ) {
 }
 if ($Main_form_number == 2 ) { header('Location: ../form/2_Learning_Teaching_and_Assessment/secondary_form_2.php'); }
 
-if ($Main_form_number == 3 ) { header('Location: .../form/3_Formal_Curriculum_Management/secondary_form_3.php'); }
+if ($Main_form_number == 3 ) { header('Location: ../form/3_Formal_Curriculum_Management/secondary_form_3.php'); }
 
 if ($Main_form_number == 4 ) { header('Location: ../form/4_Co_curricular_Activities/secondary_form_4.php'); }
 
