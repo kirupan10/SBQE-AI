@@ -2,7 +2,6 @@
 session_start();
  echo $function_number =$_REQUEST['function']; 
 
-
 	if ($function_number > 1 && $function_number < 7  ) {
 	header('Location: main_subjects_form.php');}
 

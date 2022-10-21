@@ -9,7 +9,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-
+   
 
 
 
@@ -59,35 +59,24 @@ Table – 1.2.2.2</P>
 </thead>
 
   <tr class="active-row" >
-    <td>4.2.1</td>
-    <td> Preparation of a plan for co - curricular activities in the primary 
-section considering individual needs of students / age groups</td>
+    <td>5.3.1</td>
+    <td>A collection of information about vocational training courses and 
+centres is maintained and the assistance of resource persons is sought 
+whenever it is necessary to support and advise students</td>
     <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
     
   </tr>
 
     <tr class="active-row" >
-    <td>4.2.2</td>
-    <td>  Implementation and monitoring of co – curricular activities 
-related to the primary section</td>
+    <td>5.3.2</td>
+    <td>The interests and skills of secondary students are identified and steps 
+are taken to inform and guide school leavers and parents to select relevant 
+vocational training courses and centres</td>
     <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
     
   </tr>
 
-  <tr class="active-row" >
-    <td>4.2.3</td>
-    <td>  Implementation of physical fitness programmes relevant to each 
-key stage and getting students engage in this</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    
-  </tr>
 
-  <tr class="active-row" >
-    <td>4.2.4</td>
-    <td>  Implementation of optional programmes for the third key stage</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    
-  </tr>
 
     <tr class="active-row" >
     <td></td>

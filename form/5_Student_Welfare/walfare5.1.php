@@ -9,7 +9,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-
+   
 
 
 
@@ -59,35 +59,32 @@ Table – 1.2.2.2</P>
 </thead>
 
   <tr class="active-row" >
-    <td>4.2.1</td>
-    <td> Preparation of a plan for co - curricular activities in the primary 
-section considering individual needs of students / age groups</td>
+    <td>5.1.1</td>
+    <td>Assigning responsibilities for guidance and counselling, and 
+implementing programmes and making the school community aware of 
+such programmes</td>
     <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
     
   </tr>
 
     <tr class="active-row" >
-    <td>4.2.2</td>
-    <td>  Implementation and monitoring of co – curricular activities 
-related to the primary section</td>
+    <td>4.3.2</td>
+    <td>Availability of a clear methodology to identify students’ problems 
+and allocation of a suitable place and time to discuss concerns/issues</td>
     <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
     
   </tr>
 
-  <tr class="active-row" >
-    <td>4.2.3</td>
-    <td>  Implementation of physical fitness programmes relevant to each 
-key stage and getting students engage in this</td>
+      <tr class="active-row" >
+    <td>5.1.3</td>
+    <td>Appropriate actions are taken to resolve the problems of the students 
+established by the counsellor and detailed confidential records are kept</td>
     <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
     
   </tr>
 
-  <tr class="active-row" >
-    <td>4.2.4</td>
-    <td>  Implementation of optional programmes for the third key stage</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    
-  </tr>
+
+
 
     <tr class="active-row" >
     <td></td>

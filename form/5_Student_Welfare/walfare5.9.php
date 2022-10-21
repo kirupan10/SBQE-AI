@@ -9,7 +9,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-
+   
 
 
 
@@ -59,35 +59,25 @@ Table – 1.2.2.2</P>
 </thead>
 
   <tr class="active-row" >
-    <td>4.2.1</td>
-    <td> Preparation of a plan for co - curricular activities in the primary 
-section considering individual needs of students / age groups</td>
+    <td>5.9.1</td>
+    <td> Establishment of Disaster Management Committees and active 
+implementation of these and identification of possible disasters and the 
+institutions which can assist in a disaster</td>
     <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
     
   </tr>
 
     <tr class="active-row" >
-    <td>4.2.2</td>
-    <td>  Implementation and monitoring of co – curricular activities 
-related to the primary section</td>
+    <td>5.9.2</td>
+    <td> Identifying strategies to minimize disasters and making the school 
+community aware of these and availability of a signal system to inform 
+others of a disaster and conducting rehearsals on behaving in the event of 
+a disaster</td>
     <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
     
   </tr>
 
-  <tr class="active-row" >
-    <td>4.2.3</td>
-    <td>  Implementation of physical fitness programmes relevant to each 
-key stage and getting students engage in this</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    
-  </tr>
 
-  <tr class="active-row" >
-    <td>4.2.4</td>
-    <td>  Implementation of optional programmes for the third key stage</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    
-  </tr>
 
     <tr class="active-row" >
     <td></td>
@@ -103,7 +93,80 @@ key stage and getting students engage in this</td>
 </center>
 </form>
 
+
+<br>
+
+<br>
+
+<br>
+
+
+<form action="" method="POST">
+<table class="styled-table">
+  <p></p>
+  <thead>
+  <tr>
+    <th ></th>
+    <th>Number of indicators 
+evaluated</th>
+    <th> Maximum marks that can be obtained 
+according to the evaluated indicators</th>
+    <th> Total marks 
+obtained</th>
+    <th> Percentage</th>
+  </tr>
+</thead>
+
+  <tr class="active-row" >
+    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
     
+  </tr>
+
+
+
+  
+</table>
+<center> <input class="form-submit-button "  type="submit"  id="submit_primary_section" name="submit_primary_section" placeholder='Sumbit' onclick="register(event)">
+</center>
+</form>
+
+
+
+<form action="" method="POST">
+<table class="styled-table">
+  <P> User conformination</P>
+  
+  <tr>
+        <td></td>
+  </tr>
+  
+  <tr>
+    <td></td>
+    <td>Name of the evaluator</td>
+    <td><input type="text"  autocomplete="off" name="evaluator_name" value="<?php echo $evaluator_name_value; ?>" required ></td>
+    <td></td>
+  </tr>
+
+  <tr class="active-row" >
+    <td></td>
+    <td>Date</td>
+    <td><input type="date" name="date" value="<?php echo $evaluator_date; ?>" required /></td>
+    <td></td>
+    
+  </tr>
+  <tr class="active-row" >
+    <td> </td>
+    
+    <td><center><input class="form-submit-button " type="submit" value="Final - Submit" name="evaluator_submit"/></td></center>
+
+  </tr>
+</table>
+
+</form>
+   
 
 
 

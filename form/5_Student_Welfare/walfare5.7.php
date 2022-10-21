@@ -9,7 +9,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-
+   
 
 
 
@@ -59,35 +59,31 @@ Table – 1.2.2.2</P>
 </thead>
 
   <tr class="active-row" >
-    <td>4.2.1</td>
-    <td> Preparation of a plan for co - curricular activities in the primary 
-section considering individual needs of students / age groups</td>
+    <td>5.7.1</td>
+    <td> Availability of a programme according to the circular to ensure child 
+protection, and assigning responsibilities to a teacher to co–ordinate this</td>
     <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
     
   </tr>
 
     <tr class="active-row" >
-    <td>4.2.2</td>
-    <td>  Implementation and monitoring of co – curricular activities 
-related to the primary section</td>
+    <td>5.7.2</td>
+    <td> Making the school community aware of instances of child abuse and 
+empowering students to take self-protective steps against this</td>
     <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
     
   </tr>
 
   <tr class="active-row" >
-    <td>4.2.3</td>
-    <td>  Implementation of physical fitness programmes relevant to each 
-key stage and getting students engage in this</td>
+    <td>5.7.3</td>
+    <td> Systematic maintenance of confidential records relating to child 
+protection and getting assistance of relevant professionals/institutions 
+whenever necessary</td>
     <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
     
   </tr>
 
-  <tr class="active-row" >
-    <td>4.2.4</td>
-    <td>  Implementation of optional programmes for the third key stage</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    
-  </tr>
+
 
     <tr class="active-row" >
     <td></td>
