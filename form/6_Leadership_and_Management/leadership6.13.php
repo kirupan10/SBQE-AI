@@ -82,14 +82,6 @@ using this for taking decisions</td>
     
   </tr>
 
-
-
-
-
-  
-
-
-
     <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>

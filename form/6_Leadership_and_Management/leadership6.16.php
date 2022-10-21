@@ -59,19 +59,26 @@ Table – 1.2.2.2</P>
 </thead>
 
   <tr class="active-row" >
-    <td>6.15.1</td>
-    <td>  Performance assessments are conducted for both academic and 
-non-academic staff and data is entered into the records held in personal files</td>
+    <td>6.16.1</td>
+    <td>  All files are maintained according to office regulations and documents 
+and information are kept systematically which can be easily accessed</td>
     <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
     
   </tr>
 
     <tr class="active-row" >
-    <td>6.15.2</td>
-    <td>Performance problems and strengths of staff are identified and 
-necessary evaluation steps are taken to identify performance problems and 
-strengths of staff with special skills and to provide necessary support for 
-improvement</td>
+    <td>6.16.2</td>
+    <td> Necessary old files and documents are retained carefully for future 
+reference and remove unnecessary files methodically</td>
+    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    
+  </tr>
+
+  <tr class="active-row" >
+    <td>6.16.3</td>
+    <td> The school has a systematic process for noting receipt of daily mail 
+and keeping notes for any relevant actions required to be taken in response 
+to received letters</td>
     <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
     
   </tr>
