@@ -1,9 +1,86 @@
-<?php 
+<?php session_start();
+    include "../backend/config.php";
+    if(isset($_POST['submit'])){
+        $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
+        $data2 = mysqli_real_escape_string($con,$_POST['marks2']);
+        $data3 = mysqli_real_escape_string($con,$_POST['marks3']);
+        $data4 = mysqli_real_escape_string($con,$_POST['marks4']);
 
+        if ($data1 != "" && $data2 != "" && $data3 != "" && $data4 != ""  ){
+            echo "Hello Debug Test1";
+            $sql_insert_datarow_1 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','3.3.1',$data1,'{$_SESSION['username']}')";
+
+            $sql_insert_datarow_2 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','3.3.2',$data2,'{$_SESSION['username']}')";
+
+            $sql_insert_datarow_3 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','3.3.3',$data3,'{$_SESSION['username']}')";
+
+            $sql_insert_datarow_4 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','3.3.4',$data4,'{$_SESSION['username']}')";
+
+
+            $result_1 = mysqli_query($con,$sql_insert_datarow_1);
+            $result_2 = mysqli_query($con,$sql_insert_datarow_2);
+            $result_3 = mysqli_query($con,$sql_insert_datarow_3);
+            $result_4 = mysqli_query($con,$sql_insert_datarow_4);
+
+            if($result_1 && $result_2 && $result_3 && $result_4 ){ header('Location: index.php');}else{
+            echo("Error description: " . mysqli_error($con));}
+
+        
+
+    }
+
+}
+
+$marks1 = "";
+$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='3.3.1' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks1 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
+
+
+$marks2 = "";
+$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='3.3.2' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks2 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
+
+$marks3 = "";
+$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='3.3.3' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks3 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
+
+$marks4 = "";
+$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='3.3.4' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks4 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
 
  ?>
-
-
 
 
 <!doctype html>
@@ -63,7 +140,7 @@ Table – 1.2.2.2</P>
 strengths /weaknesses of the students who enter Grades 1 
 and 3, and maintaining updated records, notes and documents 
 pertaining to each student </td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="marks1" value="<?php echo $marks1; ?>" required ></td>
     
   </tr>
 
@@ -71,7 +148,7 @@ pertaining to each student </td>
     <td>3.3.2</td>
     <td> Planning the teaching – learning process through the 
 findings of the student identification programme</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="marks2" value="<?php echo $marks2; ?>" required ></td>
     
   </tr>
 
@@ -79,7 +156,7 @@ findings of the student identification programme</td>
     <td>3.3.3</td>
     <td>Implementation of projects / feedback activities on the 
 basis of the findings from the analysis of assessment reports</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="marks3" value="<?php echo $marks3; ?>" required ></td>
     
   </tr>
 
@@ -88,21 +165,21 @@ basis of the findings from the analysis of assessment reports</td>
     <td>Making teacher aware that provide the assessment 
 information of essential competencies from one stage to another 
 and implement a monitoring programme in this regard</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="marks4" value="<?php echo $marks4; ?>" required ></td>
     
   </tr>
 
       <tr class="active-row" >
     <td>3.3.5</td>
     <td>Total Marks for the criterion</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2 + $marks3 + $marks4; ?>" disabled ></td>
     
   </tr>
 
 
   
 </table>
-<center> <input class="form-submit-button "  type="submit"  id="submit_primary_section" name="submit_primary_section" placeholder='Sumbit' onclick="register(event)">
+<center> <input class="form-submit-button "  type="submit"  id="submit_primary_section" name="submit" placeholder='Sumbit' onclick="register(event)">
 </center>
 </form>
 

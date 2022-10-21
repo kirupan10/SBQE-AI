@@ -1,7 +1,71 @@
-<?php 
+<?php session_start();
+    include "../backend/config.php";
+    if(isset($_POST['submit'])){
+        $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
+        $data2 = mysqli_real_escape_string($con,$_POST['marks2']);
+        $data3 = mysqli_real_escape_string($con,$_POST['marks3']);
 
+        if ($data1 != "" && $data2 != "" && $data3 != ""  ){
+            echo "Hello Debug Test1";
+            $sql_insert_datarow_1 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','3.4.1',$data1,'{$_SESSION['username']}')";
+
+            $sql_insert_datarow_2 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','3.4.2',$data2,'{$_SESSION['username']}')";
+
+            $sql_insert_datarow_3 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','3.4.3',$data3,'{$_SESSION['username']}')";
+
+
+            $result_1 = mysqli_query($con,$sql_insert_datarow_1);
+            $result_2 = mysqli_query($con,$sql_insert_datarow_2);
+            $result_3 = mysqli_query($con,$sql_insert_datarow_3);
+
+            if($result_1 && $result_2 && $result_3 ){ header('Location: index.php');}else{
+            echo("Error description: " . mysqli_error($con));}
+
+        
+
+    }
+
+}
+
+$marks1 = "";
+$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='3.4.1' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks1 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
+
+
+$marks2 = "";
+$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='3.4.2' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks2 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
+
+$marks3 = "";
+$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='3.4.3' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks3 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
 
  ?>
+
 
 
 
@@ -62,7 +126,7 @@ Table – 1.2.2.2</P>
     <td>3.4.1</td>
     <td> Maintenance of space for wall paper and creation boards 
 and keeping them up dated</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="marks1" value="<?php echo $marks1; ?>" required ></td>
     
   </tr>
 
@@ -70,7 +134,7 @@ and keeping them up dated</td>
     <td>3.4.2</td>
     <td> Protection and the safety of the equipment and the facilities 
 of the classrooms and keeping these up-to-date</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="marks2" value="<?php echo $marks2; ?>" required ></td>
     
   </tr>
 
@@ -79,21 +143,21 @@ of the classrooms and keeping these up-to-date</td>
     <td>Planning of specific places in the class room for various 
 activities using these and ensuring easy access to them for 
 activities (work table, book corner, class library)</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="marks3" value="<?php echo $marks3; ?>" required ></td>
     
   </tr>
 
       <tr class="active-row" >
-    <td>3.4.4</td>
+    <td></td>
     <td>Total Marks for the criterion</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2 + $marks3; ?>" disabled ></td>
     
   </tr>
 
 
   
 </table>
-<center> <input class="form-submit-button "  type="submit"  id="submit_primary_section" name="submit_primary_section" placeholder='Sumbit' onclick="register(event)">
+<center> <input class="form-submit-button "  type="submit"  id="submit_primary_section" name="submit" placeholder='Sumbit' onclick="register(event)">
 </center>
 </form>
 

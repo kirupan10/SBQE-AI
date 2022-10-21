@@ -1,9 +1,51 @@
-<?php 
+<?php session_start();
+    include "../backend/config.php";
+    if(isset($_POST['submit'])){
+        $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
+        $data2 = mysqli_real_escape_string($con,$_POST['marks2']);
 
+        if ($data1 != "" && $data2 != "" ){
+            $sql_insert_datarow_1 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','3.6.1',$data1,'{$_SESSION['username']}')";
 
+            $sql_insert_datarow_2 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','3.6.2',$data2,'{$_SESSION['username']}')";
+
+            $result_1 = mysqli_query($con,$sql_insert_datarow_1);
+            $result_2 = mysqli_query($con,$sql_insert_datarow_2);
+
+            if($result_1 && $result_2){ header('Location: index.php');}else{
+            echo("Error description: " . mysqli_error($con));}
+
+        
+
+    }
+
+}
+
+$marks1 = "";
+$marks2 = "";
+
+$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='3.6.1' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks1 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
+
+$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='3.6.2' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks2 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
  ?>
-
-
 
 
 <!doctype html>
@@ -61,7 +103,7 @@ Table – 1.2.2.2</P>
 instructional manuals is entrusted to a particular teacher and 
 Identification of the requirement and take necessary steps to 
 fulfill them.</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="marks1" value="<?php echo $marks1; ?>" required ></td>
     
   </tr>
 
@@ -70,21 +112,20 @@ fulfill them.</td>
     <td> Textbooks, syllabi, and teacher instructional manuals are 
 recorded, stored properly, all are appropriately distributed and 
 actions are taken for taking back.</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+   <td><input type="number"  autocomplete="off" name="marks2" value="<?php echo $marks2; ?>" required ></td>
     
   </tr>
 
       <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    
+    <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2; ?>" disabled ></td>
   </tr>
 
 
   
 </table>
-<center> <input class="form-submit-button "  type="submit"  id="submit_primary_section" name="submit_primary_section" placeholder='Sumbit' onclick="register(event)">
+<center> <input class="form-submit-button "  type="submit"  id="submit_primary_section" name="submit" placeholder='Sumbit' onclick="register(event)">
 </center>
 </form>
 
