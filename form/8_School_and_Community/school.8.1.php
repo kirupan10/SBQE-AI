@@ -1,10 +1,70 @@
-<?php 
+<?php session_start();
+    include "../backend/config.php";
+    if(isset($_POST['submit'])){
+        $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
+        $data2 = mysqli_real_escape_string($con,$_POST['marks2']);
+        $data3 = mysqli_real_escape_string($con,$_POST['marks3']);
 
+        if ($data1 != "" && $data2 != "" && $data3 != ""  ){
+            echo "Hello Debug Test1";
+            $sql_insert_datarow_1 = "INSERT INTO school_community_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','8.1.1',$data1,'{$_SESSION['username']}')";
+
+            $sql_insert_datarow_2 = "INSERT INTO school_community_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','8.1.2',$data2,'{$_SESSION['username']}')";
+
+            $sql_insert_datarow_3 = "INSERT INTO school_community_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','8.1.3',$data3,'{$_SESSION['username']}')";
+
+
+            $result_1 = mysqli_query($con,$sql_insert_datarow_1);
+            $result_2 = mysqli_query($con,$sql_insert_datarow_2);
+            $result_3 = mysqli_query($con,$sql_insert_datarow_3);
+
+            if($result_1 && $result_2 && $result_3 ){ }else{
+            echo("Error description: " . mysqli_error($con));}
+
+        
+
+    }
+
+}
+
+$marks1 = "";
+$sql = "SELECT  Marks FROM school_community_main WHERE Activity_Number ='8.1.1' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks1 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
+
+
+$marks2 = "";
+$sql = "SELECT  Marks FROM school_community_main WHERE Activity_Number ='8.1.2' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks2 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
+
+$marks3 = "";
+$sql = "SELECT  Marks FROM school_community_main WHERE Activity_Number ='8.1.3' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks3 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
 
  ?>
-
-
-
 
 <!doctype html>
 <html lang="en">
@@ -63,7 +123,7 @@ Table – 1.2.2.2</P>
     <td>  Class circles are established in all classes, meetings are held at least 
 once a term and decisions taken at class circles are implemented and 
 records are maintained</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+     <td><input type="number"  autocomplete="off" name="marks1" value="<?php echo $marks1; ?>" required ></td>
     
   </tr>
 
@@ -71,7 +131,7 @@ records are maintained</td>
     <td>8.1.2</td>
     <td> Parents are made aware of the curriculum, new trends, projects, 
 evaluation and circulars in class circles</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+     <td><input type="number"  autocomplete="off" name="marks2" value="<?php echo $marks2; ?>" required ></td>
     
   </tr>
 
@@ -80,23 +140,21 @@ evaluation and circulars in class circles</td>
     <td>Parents are made aware of each student’s progress, obtaining 
 their ideas and they are encouraged to be involved in feedback and feed 
 forward about their child</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="marks3" value="<?php echo $marks3; ?>" required ></td>
     
   </tr>
-
-
 
     <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2 + $marks3; ?>" disabled ></td>
     
   </tr>
 
 
   
 </table>
-<center> <input class="form-submit-button "  type="submit"  id="submit_primary_section" name="submit_primary_section" placeholder='Sumbit' onclick="register(event)">
+<center> <input class="form-submit-button "  type="submit"  id="submit_primary_section" name="submit" placeholder='Sumbit' onclick="register(event)">
 </center>
 </form>
 

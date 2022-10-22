@@ -1,9 +1,101 @@
-<?php 
+<?php session_start();
+    include "../backend/config.php";
+    if(isset($_POST['submit'])){
+        $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
+        $data2 = mysqli_real_escape_string($con,$_POST['marks2']);
+        $data3 = mysqli_real_escape_string($con,$_POST['marks3']);
+        $data4 = mysqli_real_escape_string($con,$_POST['marks4']);
+        $data5 = mysqli_real_escape_string($con,$_POST['marks5']);
+
+        if ($data1 != "" && $data2 != "" && $data3 != "" && $data4 != "" && $data5 != ""  ){
+            echo "Hello Debug Test1";
+            $sql_insert_datarow_1 = "INSERT INTO leadership_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','6.2.1',$data1,'{$_SESSION['username']}')";
+
+            $sql_insert_datarow_2 = "INSERT INTO leadership_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','6.2.2',$data2,'{$_SESSION['username']}')";
+
+            $sql_insert_datarow_3 = "INSERT INTO leadership_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','6.2.3',$data3,'{$_SESSION['username']}')";
+
+            $sql_insert_datarow_4 = "INSERT INTO leadership_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','6.2.4',$data4,'{$_SESSION['username']}')";
+
+            $sql_insert_datarow_5 = "INSERT INTO leadership_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','6.2.4',$data5,'{$_SESSION['username']}')";
 
 
+            $result_1 = mysqli_query($con,$sql_insert_datarow_1);
+            $result_2 = mysqli_query($con,$sql_insert_datarow_2);
+            $result_3 = mysqli_query($con,$sql_insert_datarow_3);
+            $result_4 = mysqli_query($con,$sql_insert_datarow_4);
+            $result_5 = mysqli_query($con,$sql_insert_datarow_5);
+
+            if($result_1 && $result_2 && $result_3 && $result_4 && $result_5 ){ }else{
+            echo("Error description: " . mysqli_error($con));}
+
+        
+
+    }
+
+}
+
+$marks1 = "";
+$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.2.1' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks1 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
+
+
+$marks2 = "";
+$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.2.2' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks2 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
+
+$marks3 = "";
+$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.2.3' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks3 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
+
+$marks4 = "";
+$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.2.4' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks4 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
+
+$marks5 = "";
+$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.2.4' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks5 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
  ?>
-
-
 
 
 <!doctype html>
@@ -63,7 +155,7 @@ Table – 1.2.2.2</P>
     <td>The plan has identified targets and the correct strategies which 
 take account of the analysis of the assessments and suggestions of the 
 community and plan accordingly.</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="marks1" value="<?php echo $marks1; ?>" required ></td>
     
   </tr>
 
@@ -71,7 +163,7 @@ community and plan accordingly.</td>
     <td>6.2.2</td>
     <td> Special attention is given to identify programmes and projects in 
 order to develop the teaching-learning process</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="marks2" value="<?php echo $marks2; ?>" required ></td>
     
   </tr>
 
@@ -80,7 +172,7 @@ order to develop the teaching-learning process</td>
     <td> The plan is prepared according to the partial development approach, 
 including estimates relevant to the programmes and projects and the 
 rolling plan</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="marks3" value="<?php echo $marks3; ?>" required ></td>
     
   </tr>
 
@@ -89,7 +181,7 @@ rolling plan</td>
     <td> Preparing the implementation plan and school calendar on the 
 priority of five year plan, responsibilities are precisely allocated and 
 action is taken for getting approval.</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+   <td><input type="number"  autocomplete="off" name="marks4" value="<?php echo $marks4; ?>" required ></td>
     
   </tr>
 
@@ -97,7 +189,7 @@ action is taken for getting approval.</td>
     <td>6.1.5</td>
     <td> Implementing targeted programmes according to the annual plan 
 and amending programmes with proper monitoring.</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="marks5" value="<?php echo $marks5; ?>" required ></td>
     
   </tr>
 
@@ -108,14 +200,14 @@ and amending programmes with proper monitoring.</td>
     <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2 + $marks3 + $marks4 + $marks5; ?>" disabled ></td>
     
   </tr>
 
 
   
 </table>
-<center> <input class="form-submit-button "  type="submit"  id="submit_primary_section" name="submit_primary_section" placeholder='Sumbit' onclick="register(event)">
+<center> <input class="form-submit-button "  type="submit"  id="submit_primary_section" name="submit" placeholder='Sumbit' onclick="register(event)">
 </center>
 </form>
 
