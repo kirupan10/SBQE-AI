@@ -1,10 +1,86 @@
-<?php 
+<?php session_start();
+    include "../backend/config.php";
+    if(isset($_POST['submit'])){
+        $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
+        $data2 = mysqli_real_escape_string($con,$_POST['marks2']);
+        $data3 = mysqli_real_escape_string($con,$_POST['marks3']);
+        $data4 = mysqli_real_escape_string($con,$_POST['marks4']);
 
+        if ($data1 != "" && $data2 != "" && $data3 != "" && $data4 != ""  ){
+            echo "Hello Debug Test1";
+            $sql_insert_datarow_1 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','4.4.1',$data1,'{$_SESSION['username']}')";
+
+            $sql_insert_datarow_2 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','4.4.2',$data2,'{$_SESSION['username']}')";
+
+            $sql_insert_datarow_3 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','4.4.3',$data3,'{$_SESSION['username']}')";
+
+            $sql_insert_datarow_4 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','4.4.4',$data4,'{$_SESSION['username']}')";
+
+
+            $result_1 = mysqli_query($con,$sql_insert_datarow_1);
+            $result_2 = mysqli_query($con,$sql_insert_datarow_2);
+            $result_3 = mysqli_query($con,$sql_insert_datarow_3);
+            $result_4 = mysqli_query($con,$sql_insert_datarow_4);
+
+            if($result_1 && $result_2 && $result_3 && $result_4 ){ header('Location: index.php');}else{
+            echo("Error description: " . mysqli_error($con));}
+
+        
+
+    }
+
+}
+
+$marks1 = "";
+$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='4.4.1' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks1 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
+
+
+$marks2 = "";
+$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='4.4.2' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks2 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
+
+$marks3 = "";
+$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='4.4.3' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks3 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
+
+$marks4 = "";
+$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='4.4.4' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) { 
+        
+         $marks4 = $row["Marks"];  } // The value we usually set is the primary 
+
+}
 
  ?>
-
-
-
 
 <!doctype html>
 <html lang="en">
@@ -59,7 +135,7 @@ Table – 1.2.2.2</P>
     <td>4.4.1</td>
     <td>Competitions, aesthetic programmes, debates and language 
 workshops are conducted</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="marks1" value="<?php echo $marks1; ?>" required ></td>
     
   </tr>
 
@@ -68,7 +144,7 @@ workshops are conducted</td>
     <td>   Implementing different clubs and societies and guiding 
 students to involve in creative opportunities (wall papers, magazines, 
 newspapers, new innovations, social service programmes)</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="marks2" value="<?php echo $marks2; ?>" required ></td>
     
   </tr>
 
@@ -77,7 +153,7 @@ newspapers, new innovations, social service programmes)</td>
     <td>   Implementing programmes like Scouting, Saukyadana 
 Movements, First–aid, Red Cross, St. John Ambulance Service, 
 Environmental Cadets Corps.</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+   <td><input type="number"  autocomplete="off" name="marks3" value="<?php echo $marks3; ?>" required ></td>
     
   </tr>
 
@@ -86,7 +162,7 @@ Environmental Cadets Corps.</td>
     <td>Maintaining updated records of different programmes 
 and the records of special victories / achievements (records, 
 newspaper articles, notes/ photographs / video )</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="marks4" value="<?php echo $marks4; ?>" required ></td>
     
   </tr>
 
@@ -96,14 +172,14 @@ newspaper articles, notes/ photographs / video )</td>
     <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
+    <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2 + $marks3 + $marks4; ?>" disabled ></td>
     
   </tr>
 
 
   
 </table>
-<center> <input class="form-submit-button "  type="submit"  id="submit_primary_section" name="submit_primary_section" placeholder='Sumbit' onclick="register(event)">
+<center> <input class="form-submit-button "  type="submit"  id="submit_primary_section" name="submit" placeholder='Sumbit' onclick="register(event)">
 </center>
 </form>
 
