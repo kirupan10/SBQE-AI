@@ -18,31 +18,37 @@ if(isset($_POST['submit_primary_section'])){
         if ($data2 > 0 && $data2 < 25 ) {
             $marks_1 = "1";
             $status = "Immediate development required";
+            $color1 = "red";
         }
 
         if ($data2 >= 25 && $data2 < 45 ) {
             $marks_1 = "2";
             $status = "Development Required";
+            $color1 = "orange";
         }
 
         if ($data2 >= 45 && $data2 < 60 ) {
             $marks_1 = "3";
             $status = "Satisfactory";
+            $color1 = "purple";
         }
 
         if ($data2 >= 60 && $data2 < 75 ) {
             $marks_1 = "4";
             $status = "Good";
+            $color1 = "yellow";
         }
 
         if ( $data2 >= 75 && $data2 < 90 ) {
             $marks_1 = "5";
             $status = "Very Good";
+            $color1 = "#26ab63";
         }
 
          if ( $data2 >= 90 ) {
             $marks_1 = "6";
             $status = "Excellent";
+            $color1 = "#124429";
         }
 
 // if condition for the second data input 
@@ -50,31 +56,39 @@ if(isset($_POST['submit_primary_section'])){
         if ($data4 > 0 && $data4 < 25 ) {
             $marks_2 = "1";
             $status_2 = "Immediate development required";
+            $color2 = "red";
         }
 
         if ($data4 >= 25 && $data4 < 45 ) {
             $marks_2 = "2";
             $status_2 = "Development Required";
+            $color2 = "orange";
         }
 
         if ($data4 >= 45 && $data4 < 60 ) {
             $marks_2 = "3";
             $status_2 = "Satisfactory";
+            $color2 = "purple";
         }
 
         if ($data4 >= 60 && $data4 < 75 ) {
             $marks_2 = "4";
             $status_2 = "Good";
+            $color2 = "yellow";
         }
 
         if ( $data4 >= 75 && $data4 < 90 ) {
             $marks_2 = "5";
             $status_2 = "Very Good";
+            $color2 = "#26ab63";
+
         }
 
          if ( $data4 >= 90 ) {
             $marks_2 = "6";
             $status_2 = "Excellent";
+            $color2 = "#124429";
+            
         }
 
         // 3rd input if condition 
@@ -82,31 +96,38 @@ if(isset($_POST['submit_primary_section'])){
         if ($data6 > 0 && $data6 < 25 ) {
             $marks_3 = "1";
             $status_3 = "Immediate development required";
+            $color3 = "red";
         }
 
         if ($data6 >= 25 && $data6 < 45 ) {
             $marks_3 = "2";
             $status_3 = "Development Required";
+            $color3 = "orange";
         }
 
         if ($data6 >= 45 && $data6 < 60 ) {
             $marks_3 = "3";
             $status_3 = "Satisfactory";
+            $color3 = "purple";
         }
 
         if ($data6 >= 60 && $data6 < 75 ) {
             $marks_3 = "4";
             $status_3 = "Good";
+            $color3 = "yellow";
         }
 
         if ( $data6 >= 75 && $data6 < 90 ) {
             $marks_3 = "5";
             $status_3 = "Very Good";
+            $color3 = "#26ab63";
         }
 
          if ( $data6 >= 90 ) {
             $marks_3 = "6";
             $status_3 = "Excellent";
+            $color3 = "#124429";
+            
         }
         
 

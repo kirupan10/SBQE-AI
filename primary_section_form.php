@@ -195,6 +195,7 @@ input[type=date]:focus {
     <th>Percentage of students </th>
     <th>Marks</th>
     <th>Status</th>
+    <th>Colour indicator</th>
   </tr>
 </thead>
   <tr class="active-row">
@@ -204,6 +205,7 @@ input[type=date]:focus {
     <td><input type="number"  autocomplete="off" name="totalPercentageOfTheStudents1111" value="<?php echo $totalPercentageOfTheStudents; ?>" required></td>
     <td><input type="text"  autocomplete="off" disabled value="<?php echo $marks; ?>"></td>
     <td><input type="text"  autocomplete="off"disabled value="<?php echo $status; ?> "></td>
+    <td bgcolor="<?php echo $color1; ?> "></td>
   </tr>
   <tr class="active-row" >
     <td>1.1.1.2</td>
@@ -212,6 +214,7 @@ input[type=date]:focus {
     <td><input type="number"  autocomplete="off" name="totalPercentageOfTheStudents1112"value="<?php echo $totalPercentageOfTheStudents2; ?>" required ></td>
     <td><input type="text"  autocomplete="off"  value="<?php echo $marks2; ?>" disabled ></td> 
     <td><input type="text"  autocomplete="off" value="<?php echo $status2; ?>"  disabled ></td>
+    <td bgcolor="<?php echo $color2; ?> "></td>
   </tr>
   <tr class="active-row" >
     <td>1.1.1.3</td>
@@ -220,6 +223,7 @@ input[type=date]:focus {
     <td><input type="number"  autocomplete="off" name="totalPercentageOfTheStudents1113" value="<?php echo $totalPercentageOfTheStudents3; ?>" required ></td>
     <td><input type="text"  autocomplete="off" value="<?php echo $marks3; ?>" disabled ></td>
     <td><input type="text"  autocomplete="off" value="<?php echo $status3; ?>"  disabled></td>
+    <td bgcolor="<?php echo $color3; ?> "></td>
   </tr>
 </table>
 <center> <input class="form-submit-button "  type="submit"  id="submit_primary_section" name="submit_primary_section" placeholder='Sumbit' onclick="register(event)">
@@ -244,6 +248,7 @@ input[type=date]:focus {
     <th>Percentage</th>
     <th>Marks</th>
     <th>Status</th>
+    <th>Color</th>
   </tr>
 </thead>
   <tr class="active-row" >
@@ -253,6 +258,7 @@ input[type=date]:focus {
     <td><input type="number"  autocomplete="off" name="Students_Percentage_2nd_Form" value="<?php echo $students_percentage_total; ?>" required ></td>
     <td><input type="text"  autocomplete="off" value="<?php echo $markstudents; ?>" disabled ></td>
     <td><input type="text"  autocomplete="off" value="<?php echo $statusstudents; ?>"  disabled></td>
+    <td bgcolor="<?php echo $color4; ?> "></td>
   </tr>
 </table>
 <center> <input class="form-submit-button "  type="submit" name = "submit_2nd_button" value="Submit"></center>

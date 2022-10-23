@@ -11,30 +11,36 @@ if ($Students_Total != "" && $Students_Percentage != "" ){
         if ($Students_Percentage > 0 && $Students_Percentage < 25 ) {
             $students_marks = "1";
             $students_status = "Immediate development required";
+            $color4 = "red";
         }
 
         if ($Students_Percentage >= 25 && $Students_Percentage < 45 ) {
             $students_marks = "2";
             $students_status = "Development Required";
+            $color4 = "orange";
         }
 
         if ($Students_Percentage >= 45 && $Students_Percentage < 60 ) {
             $students_marks = "3";
             $students_status = "Satisfactory";
+            $color4 = "purple";
         }
 
         if ($Students_Percentage >= 60 && $Students_Percentage < 75 ) {
             $students_marks = "4";
             $students_status = "Good";
+            $color4 = "yellow";
         }
 
         if ( $Students_Percentage >= 75 && $Students_Percentage < 90 ) {
             $students_marks = "5";
             $students_status = "Very Good";
+            $color4 = "#26ab63";
         }
         if ( $Students_Percentage >= 90 ) {
             $students_marks = "6";
-            $students_status = "Excellent";
+            $students_status = "#124429";
+
         }
 
 
