@@ -1,4 +1,4 @@
-<?php session_start();
+<?php include "../backend/function_loggedin.php";
     include "../backend/config.php";
     if(isset($_POST['submit'])){
         $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
@@ -22,7 +22,7 @@
             $result_3 = mysqli_query($con,$sql_insert_datarow_3);
             $result_4 = mysqli_query($con,$sql_insert_datarow_4);
 
-            if($result_1 && $result_2 && $result_3 && $result_4 ){ header('Location: index.php');}else{
+            if($result_1 && $result_2 && $result_3 && $result_4 ){ }else{
             echo("Error description: " . mysqli_error($con));}
 
         
@@ -278,8 +278,9 @@ key stage and getting students engage in this</td>
     <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>
-    <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2 + $marks3 + $marks4; ?>" disabled ></td>
-    
+    <td><input type="number"  autocomplete="off" name="" value="<?php echo $total_marks = $marks1 + $marks2 + $marks3 + $marks4; ?>" disabled ></td>
+    <?php $_SESSION["curricular_4_2"] = $total_marks; ?>
+    <?php echo "Marks Total"."  ". $_SESSION["curricular_4_2"]; ?>
   </tr>
 
 
@@ -290,6 +291,8 @@ key stage and getting students engage in this</td>
 </form>
 
     
+<a  style="float:right; color: black"; href="curricular_4.3.php" >Go to next page</a>
+<a  style="float:left; color: black;" href="curricular_4.1.php" >Go to previous page</a>
 
 
 

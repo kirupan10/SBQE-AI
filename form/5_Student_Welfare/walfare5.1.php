@@ -1,4 +1,4 @@
-<?php session_start();
+<?php 
     include "../backend/config.php";
     include "../backend/function_loggedin.php";
     if(isset($_POST['submit'])){

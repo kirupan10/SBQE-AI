@@ -1,4 +1,4 @@
-<?php session_start();
+<?php include "../backend/function_loggedin.php";
     include "../backend/config.php";
     if(isset($_POST['submit'])){
         $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
@@ -281,8 +281,9 @@ stimulating learning environment is created</td>
     <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>
-   <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2 + $marks3 + $marks4; ?>" disabled ></td>
-    
+   <td><input type="number"  autocomplete="off" name="" value="<?php echo $total_marks = $marks1 + $marks2 + $marks3 + $marks4; ?>" disabled ></td>
+    <?php $_SESSION["physical.7_2"] = $total_marks; ?>
+    <?php echo "Marks Total"."  ". $_SESSION["physical.7_2"]; ?>
   </tr>
 
 
@@ -293,7 +294,8 @@ stimulating learning environment is created</td>
 </form>
 
     
-
+<a  style="float:right; color: black"; href=" physical.7.3.php" >Go to next page</a>
+<a  style="float:left; color: black;" href="physical.7.1.php" >Go to previous page</a>
 
 
                 

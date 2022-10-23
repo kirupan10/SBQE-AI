@@ -1,5 +1,44 @@
-<?php session_start();
+<?php include "../backend/function_loggedin.php";
     include "../backend/config.php";
+
+
+
+
+  
+
+if(isset($_SESSION['physical.7_1']) && !empty($_SESSION['physical.7_1'])) {
+  
+}else{ header("location: physical.7.1.php");}
+
+if(isset($_SESSION['physical.7_2']) && !empty($_SESSION['physical.7_2'])) {
+  
+}else{ header("location: physical.7.2.php");}
+
+if(isset($_SESSION['physical.7_3']) && !empty($_SESSION['physical.7_3'])) {
+  
+}else{ header("location: physical.7.3.php");}
+
+if(isset($_SESSION['physical.7_4']) && !empty($_SESSION['physical.7_4'])) {
+  
+}else{ header("location: physical.7.4.php");}
+
+
+
+if(isset($_SESSION['physical.7_5']) && !empty($_SESSION['physical.7_5'])) {
+  
+}else{ header("location: physical.7.5.php");}
+
+
+
+if(isset($_SESSION['physical.7_6']) && !empty($_SESSION['physical.7_6'])) {
+  
+}else{ header("location: physical.7.6.php");}
+
+if(isset($_SESSION['physical.7_7']) && !empty($_SESSION['physical.7_7'])) {
+  
+}else{ header("location: physical.7.7.php");}
+
+
     if(isset($_POST['submit'])){
         $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
         $data2 = mysqli_real_escape_string($con,$_POST['marks2']);
@@ -356,8 +395,9 @@ spaces and relevant information is displayed</td>
     <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>
-    <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2 + $marks3 + $marks4; ?>" disabled ></td>
-    
+    <td><input type="number"  autocomplete="off" name="" value="<?php echo $total_marks =  $marks1 + $marks2 + $marks3 + $marks4; ?>" disabled ></td>
+    <?php $_SESSION["physical.7_8"] = $total_marks; ?>
+    <?php echo "Marks Total"."  ". $_SESSION["physical.7_8"]; ?>
   </tr>
 
 
@@ -388,12 +428,12 @@ obtained</th>
   </tr>
 </thead>
 
-  <tr class="active-row" >
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    
+   tr class="active-row" >
+    <td>1.1.1.1</td> <?php $indicators = 21; ?>
+    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo  $t_indicator = $indicators * 6; ?>" disabled/></td>
+    <td><input type="text" name="data1" autocomplete="off" value="<?php echo $tmarks = $_SESSION['physical.7_1'] + $_SESSION['physical.7_2'] + $_SESSION['physical.7_3'] + $_SESSION['physical.7_4'] + $_SESSION['physical.7_5'] + $_SESSION['physical.7_6'] + $_SESSION['physical.7_7'] + $_SESSION['physical.7_8']; ?>"  disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = "<?php echo ( $tmarks /$t_indicator)*100;?>" disabled /></td>
   </tr>
 
 
@@ -451,7 +491,12 @@ obtained</th>
   </tr>
   </table>
 </form>
-                
+ 
+ <a  style="float:right; color: black"; href="" >Go to next page</a>
+<a  style="float:left; color: black;" href="physical.7.7.php" >Go to previous page</a>
+
+
+
             <br> <br>
 
             </div>

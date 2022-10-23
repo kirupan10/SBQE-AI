@@ -1,5 +1,25 @@
-<?php session_start();
+<?php 
+include "../backend/function_loggedin.php";
     include "../backend/config.php";
+
+
+if(isset($_SESSION['curricular_4_1']) && !empty($_SESSION['curricular_4_1'])) {
+  
+}else{ header("location: curricular_4.1.php");}
+
+if(isset($_SESSION['curricular_4_2']) && !empty($_SESSION['curricular_4_2'])) {
+  
+}else{ header("location: curricular_4.2.php");}
+
+if(isset($_SESSION['curricular_4_3']) && !empty($_SESSION['curricular_4_3'])) {
+  
+}else{ header("location: curricular_4.3.php");}
+
+if(isset($_SESSION['curricular_4_4']) && !empty($_SESSION['curricular_4_4'])) {
+  
+}else{ header("location: curricular_4.4.php");}
+
+
     if(isset($_POST['submit'])){
         $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
         $data2 = mysqli_real_escape_string($con,$_POST['marks2']);
@@ -83,7 +103,7 @@ if ( $evaluator_name != "" && $date != ""  ){
 
 if($result_evaluator){
             
-            header('Location: index.php');
+            
         }else{
             echo("Error description: " . mysqli_error($con));
         }
@@ -108,7 +128,7 @@ if ($result->num_rows > 0) {
         
          $evaluator_name_value = $row["UserInputName"];   // The value we usually set is the primary key
          $evaluator_date = $row["Time_submit"]; }// The value we usually set is the primary key
-        echo("Hello world ".$evaluator_name_value. " " . $evaluator_date);
+       //  echo("Hello world ".$evaluator_name_value. " " . $evaluator_date);
          
        } else { echo "error"; } // While loop must be terminated 
 
@@ -305,8 +325,9 @@ and positive attitudes</td>
     <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>
-    <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2; ?>" disabled ></td>
-    
+    <td><input type="number"  autocomplete="off" name="" value="<?php echo $total_marks = $marks1 + $marks2; ?>" disabled ></td>
+    <?php $_SESSION["curricular_4_5"] = $total_marks; ?>
+    <?php echo "Marks Total"."  ". $_SESSION["curricular_4_5"]; ?>
   </tr>
 
 
@@ -335,12 +356,11 @@ obtained</th>
 </thead>
 
   <tr class="active-row" >
-    <td></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    
+    <td>1.1.1.1</td> <?php $indicators = 21; ?>
+    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators * 6; ?>" disabled/></td>
+    <td><input type="text" name="data1" autocomplete="off" value="<?php echo $tmarks = $_SESSION['curricular_4_1'] + $_SESSION['curricular_4_2'] + $_SESSION['curricular_4_3'] + $_SESSION['curricular_4_4'] + $_SESSION['curricular_4_5']; ?>"  disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = "<?php echo ( $tmarks /( $indicators * 6))*100;?>" disabled /></td>
   </tr>
 
 
@@ -399,6 +419,8 @@ obtained</th>
   </table>
 </form>
 
+<a  style="float:right; color: black"; href="" >Go to next page</a>
+<a  style="float:left; color: black;" href="curricular_4.4.php" >Go to previous page</a>
                 
             <br> <br>
 

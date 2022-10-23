@@ -1,4 +1,4 @@
-<?php session_start();
+<?php include "../backend/function_loggedin.php";
     include "../backend/config.php";
     if(isset($_POST['submit'])){
         $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
@@ -236,8 +236,9 @@ correct time and action is taken to implement recommendations</td>
     <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>
-    <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2; ?>" disabled ></td>
-    
+    <td><input type="number"  autocomplete="off" name="" value="<?php echo $total_marks = $marks1 + $marks2; ?>" disabled ></td>
+    <?php $_SESSION["physical.7_4"] = $total_marks; ?>
+    <?php echo "Marks Total"."  ". $_SESSION["physical.7_4"]; ?>
   </tr>
 
 
@@ -249,7 +250,8 @@ correct time and action is taken to implement recommendations</td>
 
     
 
-
+<a  style="float:right; color: black"; href=" physical.7.5.php" >Go to next page</a>
+<a  style="float:left; color: black;" href="physical.7.3.php" >Go to previous page</a>
 
                 
             <br> <br>

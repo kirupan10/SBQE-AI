@@ -1,4 +1,4 @@
-<?php session_start();
+<?php 
 include "../backend/function_loggedin.php";
 if(isset($_SESSION['walfare_total_5_1']) && !empty($_SESSION['walfare_total_5_1'])) {
   
