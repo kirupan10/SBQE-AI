@@ -1,5 +1,6 @@
-<?php session_start();
+<?php  
     include "../backend/config.php";
+    include "../backend/function_loggedin.php";
     if(isset($_POST['submit'])){
         $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
         $data2 = mysqli_real_escape_string($con,$_POST['marks2']);
@@ -28,7 +29,7 @@
 }
 
 $marks1 = "";
-$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.4.1' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.4.1' && School_ID ='{$_SESSION['school_id']}' order by Leadership_Management_ID DESC LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -41,7 +42,7 @@ if ($result->num_rows > 0) {
 
 
 $marks2 = "";
-$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.4.2' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.4.2' && School_ID ='{$_SESSION['school_id']}' order by Leadership_Management_ID DESC LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -53,7 +54,7 @@ if ($result->num_rows > 0) {
 }
 
 $marks3 = "";
-$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.4.3' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.4.3' && School_ID ='{$_SESSION['school_id']}' order by Leadership_Management_ID DESC LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -263,8 +264,9 @@ effectively</td>
     <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>
-    <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2 + $marks3; ?>" disabled ></td>
-    
+    <td><input type="number"  autocomplete="off" name="" value="<?php echo $total_marks = $marks1 + $marks2 + $marks3; ?>" disabled ></td>
+    <?php $_SESSION["leadership_6_4"] = $total_marks; ?>
+    <?php echo "Marks Total"."  ". $_SESSION["leadership_6_4"]; ?>
   </tr>
 
 
@@ -275,7 +277,8 @@ effectively</td>
 </form>
 
     
-
+<a  style="float:right; color: black"; href=" leadership6.5.php" >Go to next page</a>
+<a  style="float:left; color: black;" href=" leadership6.3.php" >Go to previous page</a>
 
 
                 

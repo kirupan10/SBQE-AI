@@ -1,5 +1,88 @@
-<?php session_start();
+<?php  
     include "../backend/config.php";
+    include "../backend/function_loggedin.php";
+
+if(isset($_SESSION['leadership_6_1']) && !empty($_SESSION['leadership_5_1'])) {
+  
+}else{ header("location: leadership6.1.php");}
+
+if(isset($_SESSION['leadership_6_2']) && !empty($_SESSION['leadership_6_2'])) {
+  
+}else{ header("location: leadership6.2.php");}
+
+if(isset($_SESSION['leadership_6_3']) && !empty($_SESSION['leadership_6_3'])) {
+  
+}else{ header("location: leadership6.3.php");}
+
+if(isset($_SESSION['leadership_6_4']) && !empty($_SESSION['leadership_6_4'])) {
+  
+}else{ header("location: leadership6.4.php");}
+
+if(isset($_SESSION['leadership_6_5']) && !empty($_SESSION['leadership_6_5'])) {
+  
+}else{ header("location: leadership6.5.php");}
+
+
+
+if(isset($_SESSION['leadership_6_6']) && !empty($_SESSION['leadership_6_6'])) {
+  
+}else{ header("location: leadership6.6.php");}
+
+
+
+if(isset($_SESSION['leadership_6_7']) && !empty($_SESSION['leadership_6_7'])) {
+  
+}else{ header("location: leadership6.7.php");}
+
+if(isset($_SESSION['leadership_6_8']) && !empty($_SESSION['leadership_6_8'])) {
+  
+}else{ header("location: leadership6.8.php");}
+
+if(isset($_SESSION['leadership_6_9']) && !empty($_SESSION['leadership_6_9'])) {
+  
+}else{ header("location: leadership6.9.php");}
+
+
+if(isset($_SESSION['leadership_6_10']) && !empty($_SESSION['leadership_6_10'])) {
+  
+}else{ header("location: leadership6.10.php");}
+
+
+if(isset($_SESSION['leadership_6_11']) && !empty($_SESSION['leadership_6_11'])) {
+  
+}else{ header("location: leadership6.11.php");}
+
+
+
+if(isset($_SESSION['leadership_6_12']) && !empty($_SESSION['leadership_6_12'])) {
+  
+}else{ header("location: leadership6.12.php");}
+
+
+if(isset($_SESSION['leadership_6_13']) && !empty($_SESSION['leadership_6_13'])) {
+  
+}else{ header("location: leadership6.13.php");}
+
+
+if(isset($_SESSION['leadership_6_14']) && !empty($_SESSION['leadership_6_14'])) {
+  
+}else{ header("location: leadership6.14.php");}
+
+
+if(isset($_SESSION['leadership_6_15']) && !empty($_SESSION['leadership_6_15'])) {
+  
+}else{ header("location: leadership6.15.php");}
+
+
+if(isset($_SESSION['leadership_6_16']) && !empty($_SESSION['leadership_6_16'])) {
+  
+}else{ header("location: leadership6.16.php");}
+
+
+
+
+
+
     if(isset($_POST['submit'])){
         $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
         $data2 = mysqli_real_escape_string($con,$_POST['marks2']);
@@ -24,7 +107,7 @@
 $marks1 = "";
 $marks2 = "";
 
-$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.9.1' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.9.1' && School_ID ='{$_SESSION['school_id']}' order by Leadership_Management_ID DESC LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -35,7 +118,7 @@ if ($result->num_rows > 0) {
 
 }
 
-$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.9.2' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.9.2' && School_ID ='{$_SESSION['school_id']}' order by Leadership_Management_ID DESC LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -197,8 +280,9 @@ measures are applied</td>
     <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>
-    <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2; ?>" disabled ></td>
-    
+    <td><input type="number"  autocomplete="off" name="" value="<?php echo $total_marks = $marks1 + $marks2; ?>" disabled ></td>
+    <?php $_SESSION["walfare_total_6_9"] = $total_marks; ?>
+    <?php echo "Marks Total"."  ". $_SESSION["walfare_total_6_9"]; ?>
   </tr>
 
 
@@ -227,12 +311,12 @@ obtained</th>
   </tr>
 </thead>
 
-  <tr class="active-row" >
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    
+  tr class="active-row" >
+    <td>1.1.1.1</td> <?php $indicators = 21; ?>
+    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled/></td>
+    <td><input type="text" name="data1" autocomplete="off" value="<?php echo $tmarks = $_SESSION['leadership6_1'] + $_SESSION['leadership6_2'] + $_SESSION['leadership6_3'] + $_SESSION['leadership6_4'] + $_SESSION['leadership6_5'] + $_SESSION['leadership6_6'] + $_SESSION['leadership6_7'] + $_SESSION['leadership6_8'] + $_SESSION['leadership6_9'] + $_SESSION['leadership6_10'] + $_SESSION['leadership6_11'] + $_SESSION['leadership6_12'] + $_SESSION['leadership6_13'] + $_SESSION['leadership6_14'] + $_SESSION['leadership6_15'] + $_SESSION['leadership6_16']; ?>"  disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = "<?php echo ( $tmarks /( $indicators * 6))*100;?>" disabled /></td>
   </tr>
 
 
@@ -277,7 +361,8 @@ obtained</th>
 
 </form>
 
-
+<a  style="float:right; color: black"; href=" leadership6.8.php" >Go to next page</a>
+<a  style="float:left; color: black;" href=" ../7_Physical_Resource_Management/physical.7.1.php" >Go to previous page</a>
                 
             <br> <br>
 
@@ -299,6 +384,9 @@ obtained</th>
   </tr>
   </table>
 </form>
+
+<a  style="float:right; color: black"; href=" ../6_Leadership_and_Management/leadership6.1.php" >Go to next page</a>
+<a  style="float:left; color: black;" href=" leadership6.8.php" >Go to previous page</a>
 
 <?php include ".././backend/footer.php";?>
 </div>

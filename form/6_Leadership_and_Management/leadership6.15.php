@@ -1,5 +1,6 @@
-<?php session_start();
+<?php  
     include "../backend/config.php";
+    include "../backend/function_loggedin.php";
     if(isset($_POST['submit'])){
         $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
         $data2 = mysqli_real_escape_string($con,$_POST['marks2']);
@@ -24,7 +25,7 @@
 $marks1 = "";
 $marks2 = "";
 
-$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.15.1' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.15.1' && School_ID ='{$_SESSION['school_id']}' order by Leadership_Management_ID DESC LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -35,7 +36,7 @@ if ($result->num_rows > 0) {
 
 }
 
-$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.15.2' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM leadership_management_main WHERE Activity_Number ='6.15.2' && School_ID ='{$_SESSION['school_id']}' order by Leadership_Management_ID DESC  LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -230,8 +231,9 @@ improvement</td>
     <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>
-    <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2; ?>" disabled ></td>
-    
+    <td><input type="number"  autocomplete="off" name="" value="<?php echo $total_marks = $marks1 + $marks2; ?>" disabled ></td>
+    <?php $_SESSION["leadership_6_15"] = $total_marks; ?>
+    <?php echo "Marks Total"."  ". $_SESSION["leadership_6_15"]; ?>
   </tr>
 
 
@@ -242,7 +244,8 @@ improvement</td>
 </form>
 
     
-
+<a  style="float:right; color: black"; href=" leadership6.16.php" >Go to next page</a>
+<a  style="float:left; color: black;" href=" leadership6.14.php" >Go to previous page</a>
 
 
                 
