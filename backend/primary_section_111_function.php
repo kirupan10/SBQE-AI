@@ -15,83 +15,98 @@ if(isset($_POST['submit_primary_section'])){
     if ($data1 != "" && $data2 != "" && $data3 != "" && $data4 != "" && $data5 != "" && $data6 != ""){
 
 
-        if ($data2 > 0 && $data2 < 35 ) {
-            $marks_1 = "F";
-            $status = "F";
+        if ($data2 > 0 && $data2 < 25 ) {
+            $marks_1 = "1";
+            $status = "Immediate development required";
         }
 
-        if ($data2 > 35 && $data2 < 55 ) {
-            $marks_1 = "S";
-            $status = "S";
+        if ($data2 >= 25 && $data2 < 45 ) {
+            $marks_1 = "2";
+            $status = "Development Required";
         }
 
-        if ($data2 > 55 && $data2 < 65 ) {
-            $marks_1 = "C";
-            $status = "C";
+        if ($data2 >= 45 && $data2 < 60 ) {
+            $marks_1 = "3";
+            $status = "Satisfactory";
         }
 
-        if ($data2 > 65 && $data2 < 75 ) {
-            $marks_1 = "B";
-            $status = "B";
+        if ($data2 >= 60 && $data2 < 75 ) {
+            $marks_1 = "4";
+            $status = "Good";
         }
 
-        if ( $data2 > 75 ) {
-            $marks_1 = "A";
-            $status = "A";
+        if ( $data2 >= 75 && $data2 < 90 ) {
+            $marks_1 = "5";
+            $status = "Very Good";
+        }
+
+         if ( $data2 >= 90 ) {
+            $marks_1 = "6";
+            $status = "Excellent";
         }
 
 // if condition for the second data input 
 
-        if ($data4 > 0 && $data4 < 35 ) {
-            $marks_2 = "F";
-            $status_2 = "F";
+        if ($data4 > 0 && $data4 < 25 ) {
+            $marks_2 = "1";
+            $status_2 = "Immediate development required";
         }
 
-        if ($data4 > 35 && $data4 < 55 ) {
-            $marks_2= "S";
-            $status_2 = "S";
+        if ($data4 >= 25 && $data4 < 45 ) {
+            $marks_2 = "2";
+            $status_2 = "Development Required";
         }
 
-        if ($data4 > 55 && $data4 < 65 ) {
-            $marks_2 = "C";
-            $status_2 = "C";
+        if ($data4 >= 45 && $data4 < 60 ) {
+            $marks_2 = "3";
+            $status_2 = "Satisfactory";
         }
 
-        if ($data4 > 65 && $data4 < 75 ) {
-            $marks_2 = "B";
-            $status_2 = "B";
+        if ($data4 >= 60 && $data4 < 75 ) {
+            $marks_2 = "4";
+            $status_2 = "Good";
         }
 
-        if ( $data4 > 75 ) {
-            $marks_2 = "A";
-            $status_2= "A";
+        if ( $data4 >= 75 && $data4 < 90 ) {
+            $marks_2 = "5";
+            $status_2 = "Very Good";
+        }
+
+         if ( $data4 >= 90 ) {
+            $marks_2 = "6";
+            $status_2 = "Excellent";
         }
 
         // 3rd input if condition 
 
-        if ($data6 > 0 && $data6 < 35 ) {
-            $marks_3 = "F";
-            $status_3= "F";
+        if ($data6 > 0 && $data6 < 25 ) {
+            $marks_3 = "1";
+            $status_3 = "Immediate development required";
         }
 
-        if ($data6 > 35 && $data6 < 55 ) {
-            $marks_3 = "S";
-            $status_3= "S";
+        if ($data6 >= 25 && $data6 < 45 ) {
+            $marks_3 = "2";
+            $status_3 = "Development Required";
         }
 
-        if ($data6 > 55 && $data6 < 65 ) {
-            $marks_3 = "C";
-            $status_3= "C";
+        if ($data6 >= 45 && $data6 < 60 ) {
+            $marks_3 = "3";
+            $status_3 = "Satisfactory";
         }
 
-        if ($data6 > 65 && $data6 < 75 ) {
-            $marks_3 = "B";
-            $status_3 = "B";
+        if ($data6 >= 60 && $data6 < 75 ) {
+            $marks_3 = "4";
+            $status_3 = "Good";
         }
 
-        if ( $data6 > 75 ) {
-            $marks_3 = "A";
-            $status_3= "A";
+        if ( $data6 >= 75 && $data6 < 90 ) {
+            $marks_3 = "5";
+            $status_3 = "Very Good";
+        }
+
+         if ( $data6 >= 90 ) {
+            $marks_3 = "6";
+            $status_3 = "Excellent";
         }
         
 
@@ -107,11 +122,7 @@ if(isset($_POST['submit_primary_section'])){
         
         
 
-        if($result_1 && $result_2 && $result_3 ){
-            
-            header('Location: index.php');
-        }else{
-            echo("Error description: " . mysqli_error($con));
+        if($result_1 && $result_2 && $result_3 ){ }else{ echo("Error description: " . mysqli_error($con));
         }
 
         
@@ -137,7 +148,7 @@ $totalNumbersOfTheStudents3 = "";
 $totalPercentageOfTheStudents3 = "";
 
 
-$sql = "SELECT  marks,status,totalNumbersOfTheStudents,totalPercentageOfTheStudents FROM pimary_section_111 WHERE Activity_Number ='111' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  marks,status,totalNumbersOfTheStudents,totalPercentageOfTheStudents FROM pimary_section_111 WHERE Activity_Number ='111' && School_ID ='{$_SESSION['school_id']}' ORDER BY id  DESC LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -153,7 +164,7 @@ if ($result->num_rows > 0) {
        } else { $marks = ""; $status = ""; } // While loop must be terminated 
 
 // 2nd output
-$sql2 = "SELECT  marks,status,totalNumbersOfTheStudents,totalPercentageOfTheStudents FROM pimary_section_111 WHERE Activity_Number ='112' && School_ID ='{$_SESSION['school_id']}' LIMIT 1 ";
+$sql2 = "SELECT  marks,status,totalNumbersOfTheStudents,totalPercentageOfTheStudents FROM pimary_section_111 WHERE Activity_Number ='112' && School_ID ='{$_SESSION['school_id']}' ORDER BY id  DESC LIMIT 1 ";
 $result2 = $con->query($sql2);
 
 if ($result2->num_rows > 0) {
@@ -171,7 +182,7 @@ if ($result2->num_rows > 0) {
 
 
 // 3nd output
-$sql3 = "SELECT  marks,status,totalNumbersOfTheStudents,totalPercentageOfTheStudents FROM pimary_section_111 WHERE Activity_Number ='113' && School_ID ='{$_SESSION['school_id']}' LIMIT 1 ";
+$sql3 = "SELECT  marks,status,totalNumbersOfTheStudents,totalPercentageOfTheStudents FROM pimary_section_111 WHERE Activity_Number ='113' && School_ID ='{$_SESSION['school_id']}' ORDER BY id  DESC LIMIT 1 ";
 $result3 = $con->query($sql3);
 
 if ($result3->num_rows > 0) {

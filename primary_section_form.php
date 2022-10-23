@@ -7,6 +7,8 @@ include "backend/function_loggedin.php";
 include "backend/evaluator_function_primary.php"; 
 include "backend/primary_section_111_function.php";
 include "backend/primary_section_112_function.php";
+include "fileupload.php";
+
  ?>
 
 
@@ -84,11 +86,41 @@ input[type=number] {
   outline: none;
 }
 
+input[type=file] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=date] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
 input[type=text]:focus {
   border: 3px solid #555;
 }
 
 input[type=number]:focus {
+  border: 3px solid #555;
+}
+
+input[type=file]:focus {
+  border: 3px solid #555;
+}
+
+input[type=date]:focus {
   border: 3px solid #555;
 }
 
@@ -246,11 +278,11 @@ obtained</th>
   </tr>
 </thead>
   <tr class="active-row" >
-    <td>1.1.1.1</td>
-    <td><input type="text" name="data1" autocomplete="off" disabled /></td>
-    <td><input type="text" name="data1" autocomplete="off" disabled/></td>
-    <td><input type="text" name="data1" autocomplete="off" disabled /></td>
-    <td><input type="text" name="data1" autocomplete="off" disabled /></td>
+    <td>1.1.1.1</td> <?php $indicators = 4; ?>
+    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled/></td>
+    <td><input type="text" name="data1" autocomplete="off" value="<?php echo $total = $marks + $marks2 + $marks3 + $markstudents; ?>"  disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = "<?php echo ($total /( $indicators * 6))*100;?>" disabled /></td>
   </tr>
 </table>
 
@@ -283,6 +315,16 @@ obtained</th>
     <td></td>
     
   </tr>
+
+  <tr class="active-row" >
+    <td></td>
+    <td>Upload E-signature</td>
+    <td><input type="file" name="fileToUpload" id="fileToUpload" required></td>
+    <td></td>
+    
+  </tr>
+
+
   <tr class="active-row" >
     <td> </td>
     

@@ -33,8 +33,6 @@ if ( $evaluator_name != "" && $date != ""  ){
         $result_evaluator = mysqli_query($con,$sql_evaluator);
 
 if($result_evaluator){
-            
-            header('Location: index.php');
         }else{
             echo("Error description: " . mysqli_error($con));
         }
