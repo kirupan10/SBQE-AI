@@ -1,5 +1,5 @@
 <?php session_start();
-
+include "../backend/function_loggedin.php";
 if(isset($_SESSION['walfare_total_5_1']) && !empty($_SESSION['walfare_total_5_1'])) {
   
 }else{ header("location: walfare5.1.php");}

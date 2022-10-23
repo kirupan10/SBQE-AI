@@ -1,5 +1,6 @@
 <?php session_start();
     include "../backend/config.php";
+    include "../backend/function_loggedin.php";
     if(isset($_POST['submit'])){
         $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
         $data2 = mysqli_real_escape_string($con,$_POST['marks2']);
