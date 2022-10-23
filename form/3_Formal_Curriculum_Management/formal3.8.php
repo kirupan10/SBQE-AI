@@ -316,6 +316,20 @@ obtained</th>
 
 </form>
                 
+ 
+<form action="fileupload.php" method="post" enctype="multipart/form-data">
+  <table>
+    <tr>
+  <td>Select E-Signature to upload:</td>
+  
+  </tr>
+  <tr>
+    <td><input type="file" name="fileToUpload" id="fileToUpload"> </td>
+    <td><input class="form-submit-button "type="submit" value="Upload Image" name="submit"></td>
+  </tr>
+  </table>
+</form>
+
             <br> <br>
 
             </div>

@@ -7,18 +7,18 @@
 
         if ($data1 != "" && $data2 != "" && $data3 != ""  ){
             echo "Hello Debug Test1";
-            $sql_insert_datarow_1 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','5.6.1',$data1,'{$_SESSION['username']}')";
+            $sql_insert_datarow_1 = "INSERT INTO student_welfare_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','5.6.1',$data1,'{$_SESSION['username']}')";
 
-            $sql_insert_datarow_2 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','5.6.2',$data2,'{$_SESSION['username']}')";
+            $sql_insert_datarow_2 = "INSERT INTO student_welfare_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','5.6.2',$data2,'{$_SESSION['username']}')";
 
-            $sql_insert_datarow_3 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','5.6.3',$data3,'{$_SESSION['username']}')";
+            $sql_insert_datarow_3 = "INSERT INTO student_welfare_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','5.6.3',$data3,'{$_SESSION['username']}')";
 
 
             $result_1 = mysqli_query($con,$sql_insert_datarow_1);
             $result_2 = mysqli_query($con,$sql_insert_datarow_2);
             $result_3 = mysqli_query($con,$sql_insert_datarow_3);
 
-            if($result_1 && $result_2 && $result_3 ){ header('Location: index.php');}else{
+            if($result_1 && $result_2 && $result_3 ){ }else{
             echo("Error description: " . mysqli_error($con));}
 
         
@@ -28,7 +28,7 @@
 }
 
 $marks1 = "";
-$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='5.6.1' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM student_welfare_main WHERE Activity_Number ='5.6.1' && School_ID ='{$_SESSION['school_id']}' order by Student_Welfare_ID DESC  LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -41,7 +41,7 @@ if ($result->num_rows > 0) {
 
 
 $marks2 = "";
-$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='5.6.2' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM student_welfare_main WHERE Activity_Number ='5.6.2' && School_ID ='{$_SESSION['school_id']}' order by Student_Welfare_ID DESC LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -53,7 +53,7 @@ if ($result->num_rows > 0) {
 }
 
 $marks3 = "";
-$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='5.6.3' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM student_welfare_main WHERE Activity_Number ='5.6.3' && School_ID ='{$_SESSION['school_id']}' order by Student_Welfare_ID DESC LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -70,7 +70,117 @@ if ($result->num_rows > 0) {
 <!doctype html>
 <html lang="en">
 <head>
-   
+       <style >
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.styled-table thead tr {
+    background-color: #968c8c;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid    #968c8c;
+}
+
+.form-submit-button {
+background: #968c8c;
+color: white;
+border-style: outset;
+border-color: #968c8c;
+height: 50px;
+width: 200px;
+font: bold15px arial,sans-serif;
+text-shadow: none;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=file] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=date] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+input[type=number]:focus {
+  border: 3px solid #555;
+}
+
+input[type=file]:focus {
+  border: 3px solid #555;
+}
+
+input[type=date]:focus {
+  border: 3px solid #555;
+}
+
+
+
+
+</style>
 
 
 
@@ -149,8 +259,9 @@ and making students aware of these matters</td>
     <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>
-    <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2 + $marks3; ?>" disabled ></td>
-    
+    <td><input type="number"  autocomplete="off" name="" value="<?php echo $total_marks = $marks1 + $marks2 + $marks3; ?>" disabled ></td>
+    <?php $_SESSION["walfare_total_5_6"] = $total_marks; ?>
+    <?php echo "Marks Total"."  ". $_SESSION["walfare_total_5_6"]; ?>
   </tr>
 
 
@@ -158,6 +269,9 @@ and making students aware of these matters</td>
 </table>
 <center> <input class="form-submit-button "  type="submit"  id="submit_primary_section" name="submit" placeholder='Sumbit' onclick="register(event)">
 </center>
+
+<a  style="float:right; color: black"; href="walfare5.7.php" >Go to next page</a>
+<a  style="float:left; color: black;" href="walfare5.5.php" >Go to previous page</a>
 </form>
 
     

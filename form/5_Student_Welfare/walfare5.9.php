@@ -1,19 +1,60 @@
 <?php session_start();
+
+if(isset($_SESSION['walfare_total_5_1']) && !empty($_SESSION['walfare_total_5_1'])) {
+  
+}else{ header("location: walfare5.1.php");}
+
+if(isset($_SESSION['walfare_total_5_2']) && !empty($_SESSION['walfare_total_5_2'])) {
+  
+}else{ header("location: walfare5.2.php");}
+
+if(isset($_SESSION['walfare_total_5_3']) && !empty($_SESSION['walfare_total_5_3'])) {
+  
+}else{ header("location: walfare5.3.php");}
+
+if(isset($_SESSION['walfare_total_5_4']) && !empty($_SESSION['walfare_total_5_4'])) {
+  
+}else{ header("location: walfare5.4.php");}
+
+if(isset($_SESSION['walfare_total_5_5']) && !empty($_SESSION['walfare_total_5_5'])) {
+  
+}else{ header("location: walfare5.5.php");}
+
+
+
+if(isset($_SESSION['walfare_total_5_6']) && !empty($_SESSION['walfare_total_5_6'])) {
+  
+}else{ header("location: walfare5.6.php");}
+
+
+
+if(isset($_SESSION['walfare_total_5_7']) && !empty($_SESSION['walfare_total_5_7'])) {
+  
+}else{ header("location: walfare5.7.php");}
+
+if(isset($_SESSION['walfare_total_5_8']) && !empty($_SESSION['walfare_total_5_8'])) {
+  
+}else{ header("location: walfare5.8.php");}
+
+
     include "../backend/config.php";
     if(isset($_POST['submit'])){
         $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
         $data2 = mysqli_real_escape_string($con,$_POST['marks2']);
 
         if ($data1 != "" && $data2 != "" ){
-            $sql_insert_datarow_1 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','5.9.1',$data1,'{$_SESSION['username']}')";
+            $sql_insert_datarow_1 = "INSERT INTO student_welfare_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','5.9.1',$data1,'{$_SESSION['username']}')";
 
-            $sql_insert_datarow_2 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','5.9.2',$data2,'{$_SESSION['username']}')";
+            $sql_insert_datarow_2 = "INSERT INTO student_welfare_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','5.9.2',$data2,'{$_SESSION['username']}')";
 
             $result_1 = mysqli_query($con,$sql_insert_datarow_1);
             $result_2 = mysqli_query($con,$sql_insert_datarow_2);
 
             if($result_1 && $result_2){ }else{
             echo("Error description: " . mysqli_error($con));}
+
+            
+
 
         
 
@@ -24,7 +65,7 @@
 $marks1 = "";
 $marks2 = "";
 
-$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='5.9.1' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM student_welfare_main WHERE Activity_Number ='5.9.1' && School_ID ='{$_SESSION['school_id']}' order by Student_Welfare_ID DESC  LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -35,7 +76,7 @@ if ($result->num_rows > 0) {
 
 }
 
-$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='5.9.2' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM student_welfare_main WHERE Activity_Number ='5.9.2' && School_ID ='{$_SESSION['school_id']}'  order by Student_Welfare_ID DESC LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -82,7 +123,7 @@ if ( $evaluator_name != "" && $date != ""  ){
 
 if($result_evaluator){
             
-            header('Location: index.php');
+            
         }else{
             echo("Error description: " . mysqli_error($con));
         }
@@ -97,7 +138,7 @@ if($result_evaluator){
 $evaluator_name_value = "";
 $evaluator_date = "";
 
-$sql = "SELECT UserInputName, Time_submit  FROM evaluator WHERE email ='{$_SESSION['email']}' && School_ID ='{$_SESSION['school_id']}' 
+$sql = "SELECT UserInputName, Time_submit  FROM evaluator WHERE email ='{$_SESSION['email']}' && School_ID ='{$_SESSION['school_id']}'  
  LIMIT 1 ";
 $result = $con->query($sql);
 
@@ -107,7 +148,7 @@ if ($result->num_rows > 0) {
         
          $evaluator_name_value = $row["UserInputName"];   // The value we usually set is the primary key
          $evaluator_date = $row["Time_submit"]; }// The value we usually set is the primary key
-        echo("Hello world ".$evaluator_name_value. " " . $evaluator_date);
+        
          
        } else { echo "error"; } // While loop must be terminated 
 
@@ -125,7 +166,117 @@ if ($result->num_rows > 0) {
 <head>
    
 
+ <style >
 
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.styled-table thead tr {
+    background-color: #968c8c;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid    #968c8c;
+}
+
+.form-submit-button {
+background: #968c8c;
+color: white;
+border-style: outset;
+border-color: #968c8c;
+height: 50px;
+width: 200px;
+font: bold15px arial,sans-serif;
+text-shadow: none;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=file] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=date] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+input[type=number]:focus {
+  border: 3px solid #555;
+}
+
+input[type=file]:focus {
+  border: 3px solid #555;
+}
+
+input[type=date]:focus {
+  border: 3px solid #555;
+}
+
+
+
+
+</style>
 
     <meta charset="utf-8" />
     <link rel="icon" type="../.././image/png" href="../.././assets/paper_img/favicon.ico">
@@ -196,8 +347,9 @@ a disaster</td>
     <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>
-    <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2; ?>" disabled ></td>
-    
+    <td><input type="number"  autocomplete="off" name="" value="<?php echo $total_marks = $marks1 + $marks2; ?>" disabled ></td>
+    <?php $_SESSION["walfare_total_5_9"] = $total_marks; ?>
+    <?php echo "Marks Total"."  ". $_SESSION["walfare_total_5_9"]; ?>
   </tr>
 
 
@@ -231,16 +383,15 @@ obtained</th>
   </tr>
 </thead>
 
+
+
   <tr class="active-row" >
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    
+    <td>1.1.1.1</td> <?php $indicators = 21; ?>
+    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled/></td>
+    <td><input type="text" name="data1" autocomplete="off" value="<?php echo $tmarks = $_SESSION['walfare_total_5_1'] + $_SESSION['walfare_total_5_2'] + $_SESSION['walfare_total_5_3'] + $_SESSION['walfare_total_5_4'] + $_SESSION['walfare_total_5_5'] + $_SESSION['walfare_total_5_6'] + $_SESSION['walfare_total_5_7'] + $_SESSION['walfare_total_5_8'] + $_SESSION['walfare_total_5_9']; ?>"  disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = "<?php echo ( $tmarks /( $indicators * 6))*100;?>" disabled /></td>
   </tr>
-
-
-
   
 </table>
 <center> <input class="form-submit-button "  type="submit"  id="submit_primary_section" name="submit_primary_section" placeholder='Sumbit' onclick="register(event)">
@@ -284,6 +435,23 @@ obtained</th>
 
 
 
+<form action="fileupload.php" method="post" enctype="multipart/form-data">
+  <table>
+    <tr>
+  <td>Select E-Signature to upload:</td>
+  
+  </tr>
+  <tr>
+    <td><input type="file" name="fileToUpload" id="fileToUpload"> </td>
+    <td><input class="form-submit-button "type="submit" value="Upload Image" name="submit"></td>
+  </tr>
+  </table>
+
+<br>
+
+  <a  style="float:right; color: black"; href="../6_Leadership_and_Management/leadership6.1.php" >Go to next page</a>
+<a  style="float:left; color: black;" href="walfare5.8.php" >Go to previous page</a>
+</form>
                 
             <br> <br>
 

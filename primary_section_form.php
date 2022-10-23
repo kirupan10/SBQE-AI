@@ -7,7 +7,6 @@ include "backend/function_loggedin.php";
 include "backend/evaluator_function_primary.php"; 
 include "backend/primary_section_111_function.php";
 include "backend/primary_section_112_function.php";
-include "fileupload.php";
 
  ?>
 
@@ -316,14 +315,6 @@ obtained</th>
     
   </tr>
 
-  <tr class="active-row" >
-    <td></td>
-    <td>Upload E-signature</td>
-    <td><input type="file" name="fileToUpload" id="fileToUpload" required></td>
-    <td></td>
-    
-  </tr>
-
 
   <tr class="active-row" >
     <td> </td>
@@ -333,6 +324,19 @@ obtained</th>
   </tr>
 </table>
 
+</form>
+
+<form action="fileupload.php" method="post" enctype="multipart/form-data">
+  <table>
+    <tr>
+  <td>Select E-Signature to upload:</td>
+  
+  </tr>
+  <tr>
+    <td><input type="file" name="fileToUpload" id="fileToUpload"> </td>
+    <td><input class="form-submit-button "type="submit" value="Upload Image" name="submit"></td>
+  </tr>
+  </table>
 </form>
 
                 

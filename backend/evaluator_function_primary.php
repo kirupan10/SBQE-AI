@@ -57,7 +57,7 @@ if ($result->num_rows > 0) {
         
          $evaluator_name_value = $row["UserInputName"];   // The value we usually set is the primary key
          $evaluator_date = $row["Time_submit"]; }// The value we usually set is the primary key
-        echo("Hello world ".$evaluator_name_value. " " . $evaluator_date);
+        //echo("Hello world ".$evaluator_name_value. " " . $evaluator_date);
          
        } else { echo "error"; } // While loop must be terminated 
 
