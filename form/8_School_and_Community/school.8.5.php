@@ -1,5 +1,23 @@
-<?php session_start();
+<?php include "../backend/function_loggedin.php";
     include "../backend/config.php";
+
+    if(isset($_SESSION['school_8.1']) && !empty($_SESSION['school_8.1'])) {
+  
+}else{ header("location: school.8.1.php");}
+
+if(isset($_SESSION['school_8.2']) && !empty($_SESSION['school_8.2'])) {
+  
+}else{ header("location: school.8.2.php");}
+
+if(isset($_SESSION['school_8.3']) && !empty($_SESSION['school_8.3'])) {
+  
+}else{ header("location: school.8.3.php");}
+
+if(isset($_SESSION['school_8.4']) && !empty($_SESSION['school_8.4'])) {
+  
+}else{ header("location: school.8.4.php");}
+
+
     if(isset($_POST['submit'])){
         $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
         $data2 = mysqli_real_escape_string($con,$_POST['marks2']);
@@ -203,8 +221,9 @@ photographs/ other evidence )</td>
     <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>
-    <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2; ?>" disabled ></td>
-    
+    <td><input type="number"  autocomplete="off" name="" value="<?php echo $total_marks = $marks1 + $marks2; ?>" disabled ></td>
+    <?php $_SESSION["school_8.5"] = $total_marks; ?>
+    <?php echo "Marks Total"."  ". $_SESSION["school_8.5"]; ?>
   </tr>
 
 
@@ -236,12 +255,11 @@ obtained</th>
 </thead>
 
   <tr class="active-row" >
-    <td></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
-    
+    <td>1.1.1.1</td> <?php $indicators = 21; ?>
+    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo  $t_indicator = $indicators * 6; ?>" disabled/></td>
+    <td><input type="text" name="data1" autocomplete="off" value="<?php echo $tmarks = $_SESSION['school_8.1'] + $_SESSION['school_8.2'] + $_SESSION['school_8.3'] + $_SESSION['school_8.4'] + $_SESSION['school_8.5']; ?>"  disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = "<?php echo ( $tmarks /$t_indicator)*100;?>" disabled /></td>
   </tr>
 
 
@@ -301,6 +319,8 @@ obtained</th>
   </tr>
   </table>
 </form>
+<a  style="float:right; color: black"; href= "" >Go to next page</a>
+<a  style="float:left; color: black;" href= "school.8.4.php" >Go to previous page</a>    
 
                 
             <br> <br>

@@ -46,7 +46,7 @@ if(isset($_SESSION['physical.7_7']) && !empty($_SESSION['physical.7_7'])) {
         $data4 = mysqli_real_escape_string($con,$_POST['marks4']);
 
         if ($data1 != "" && $data2 != "" && $data3 != "" && $data4 != ""  ){
-            echo "Hello Debug Test1";
+            //echo "Hello Debug Test1";
             $sql_insert_datarow_1 = "INSERT INTO physical_resource_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','7.8.1',$data1,'{$_SESSION['username']}')";
 
             $sql_insert_datarow_2 = "INSERT INTO physical_resource_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','7.8.2',$data2,'{$_SESSION['username']}')";
@@ -180,7 +180,7 @@ if ($result->num_rows > 0) {
         
          $evaluator_name_value = $row["UserInputName"];   // The value we usually set is the primary key
          $evaluator_date = $row["Time_submit"]; }// The value we usually set is the primary key
-        echo("Hello world ".$evaluator_name_value. " " . $evaluator_date);
+        //echo("Hello world ".$evaluator_name_value. " " . $evaluator_date);
          
        } else { echo "error"; } // While loop must be terminated 
 
@@ -428,7 +428,7 @@ obtained</th>
   </tr>
 </thead>
 
-   tr class="active-row" >
+   <tr class="active-row" >
     <td>1.1.1.1</td> <?php $indicators = 21; ?>
     <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled /></td>
     <td><input type="text" name="data1" autocomplete="off" value = " <?php echo  $t_indicator = $indicators * 6; ?>" disabled/></td>
