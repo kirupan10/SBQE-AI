@@ -162,30 +162,12 @@ input[type=date]:focus {
 
          
 
-    <div id="labels-badges">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="tim-title">
-                    <h3> School : <?php echo $_SESSION["school_name"]; ?></h3>
-                    <h3> Name : <?php echo $_SESSION["username"]; ?></h3>
-                    <p> Form <?php echo "Form details"; ?></p>
-                    <p> Small explaination about what is activities and how to select/use guide <br> lines </p>
-                        </div>
-                        <span class="label label-default">Default</span>
-                        <span class="label label-primary">Primary</span>
-                        <span class="label label-info">Info</span>
-                        <span class="label label-success">Success</span>
-                        <span class="label label-warning">Warning</span>
-                        <span class="label label-danger">Danger</span>
-
-                    </div>
-                    <div class="col-md-6">
-                    </div>
-                </div> <!-- end row -->
-            </div> <!-- end labels-badges -->
+    
 
 <form action="" method="POST">
 <table class="styled-table">
+  <h3>Student Achievement
+1.1. Primary Section </h3>
   <P> 1.1.1 Reaching the goals of the curriculum (Primary) - Table 1.1.1 </P>
   <thead>
   <tr>

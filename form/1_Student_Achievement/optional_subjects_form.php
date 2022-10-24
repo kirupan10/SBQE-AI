@@ -200,7 +200,8 @@ obtained above 40 marks </th>
 </form>
 
     
-
+<a  style="float:right; color: black"; href="" >Go to next page</a>
+<a  style="float:left; color: black;" href="" >Go to previous page</a>
 
 
                 

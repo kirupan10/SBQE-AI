@@ -1,4 +1,5 @@
-<?php session_start();
+<?php 
+    include "../backend/function_loggedin.php";
     include "../backend/config.php";
     if(isset($_POST['submit'])){
         $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
@@ -12,7 +13,7 @@
             $result_1 = mysqli_query($con,$sql_insert_datarow_1);
             $result_2 = mysqli_query($con,$sql_insert_datarow_2);
 
-            if($result_1 && $result_2){ header('Location: index.php');}else{
+            if($result_1 && $result_2){ }else{
             echo("Error description: " . mysqli_error($con));}
 
         
@@ -199,8 +200,16 @@ input[type=date]:focus {
 
 <form action="" method="POST">
 <table class="styled-table">
-  <P> Percentage of students who obtained above 40 marks for each of the following subjects (Grade 12-13) 
-Table – 1.2.2.2</P>
+ <h3> 3. Classroom Evaluation – Learning, Teaching and Assessment (From Grade 1-13)</h3>
+  <p>Awarding marks: Award marks for each indicator according to the following rating scales using the descriptions
+given in the indicators.</p>
+
+<p>01 mark – Immediate development required </p>
+<p>02 marks – Development required</p>
+<p>03 marks - Satisfactory</p>
+<p>04 marks – Good </p>
+<p>05 marks – Very good</p>
+<p>06 marks - Excellent </p>
   <thead>
   <tr>
     <th ></th>
@@ -231,7 +240,9 @@ actions are taken for taking back.</td>
       <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>
-    <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2; ?>" disabled ></td>
+    <td><input type="number"  autocomplete="off" name="" value="<?php echo $total_marks = $marks1 + $marks2; ?>" disabled ></td>
+    <?php $_SESSION["formal3_6"] = $total_marks; ?>
+    <?php echo "Marks Total"."  ". $_SESSION["formal3_6"]; ?>
   </tr>
 
 
@@ -242,7 +253,8 @@ actions are taken for taking back.</td>
 </form>
 
     
-
+<a  style="float:right; color: black"; href="formal3.7.php" >Go to next page</a>
+<a  style="float:left; color: black;" href="formal3.5.php" >Go to previous page</a>  
 
 
                 

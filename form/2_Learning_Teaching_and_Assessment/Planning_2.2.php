@@ -155,8 +155,16 @@ input[type=date]:focus {
 
 <form action="" method="POST">
 <table class="styled-table">
-  <P> Percentage of students who obtained above 40 marks for each of the following subjects (Grade 12-13) 
-Table – 1.2.2.2</P>
+  <h3> 2. Learning, Teaching and Assessment</h3>
+  <p>Awarding marks: Award marks for each indicator according to the following rating scales using the descriptions
+given in the indicators.</p>
+
+<p>01 mark – Immediate development required </p>
+<p>02 marks – Development required</p>
+<p>03 marks - Satisfactory</p>
+<p>04 marks – Good </p>
+<p>05 marks – Very good</p>
+<p>06 marks - Excellent </p>
   <thead>
   <tr>
     <th rowspan="2"></th>
@@ -274,7 +282,8 @@ pattern and time management</td>
     
 
 
-
+ <a  style="float:right; color: black"; href="Planning_2.3.php" >Go to next page</a>
+<a  style="float:left; color: black;" href="Planning_2.1.php" >Go to previous page</a>   
                 
             <br> <br>
 

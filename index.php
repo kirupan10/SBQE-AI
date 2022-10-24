@@ -71,7 +71,18 @@ $conn->close();
 <head>
     <style>
 
-
+.button {
+    display: block;
+    width: 500px;
+    height: 45px;
+    background: #677173;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+}
     </style>
     
     <meta charset="utf-8" />
@@ -112,14 +123,14 @@ $conn->close();
                     </div>
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <a href="select_form.php?form=1" class="btn btn-simple">1. Student Achievement </a> <br>
-                            <a href="select_form.php?form=2" class="btn btn-simple">2. Learning, Teaching and Assessment</a> <br>
-                            <a href="select_form.php?form=3" class="btn btn-simple">3. Formal Curriculum Management</a> <br>
-                            <a href="select_form.php?form=4" class="btn btn-simple">4. Co - curricular Activities</a> <br>
-                            <a href="select_form.php?form=5" class="btn btn-simple">5. Student Welfare</a> <br>
-                            <a href="select_form.php?form=6" class="btn btn-simple">6. Leadership and Management</a> <br>
-                            <a href="select_form.php?form=7" class="btn btn-simple">7. Physical Resource Management</a> <br>
-                            <a href="select_form.php?form=8" class="btn btn-simple">8. School and Community</a> <br>
+                            <a href="select_form.php?form=1" class="button" class="btn btn-simple">1. Student Achievement </a> <br>
+                            <a href="form/2_Learning_Teaching_and_Assessment/secondary_form_2.php" class="button" class="btn btn-simple">2. Learning, Teaching and Assessment</a> <br>
+                            <a href="form/3_Formal_Curriculum_Management/secondary_form_3.php" class="button" class="btn btn-simple">3. Formal Curriculum Management</a> <br>
+                            <a href="form/4_Co_curricular_Activities/secondary_form_4.php" class="button" class="btn btn-simple">4. Co - curricular Activities</a> <br>
+                            <a href="form/5_Student_Welfare/secondary_form_5.php" class="button" class="btn btn-simple">5. Student Welfare</a> <br>
+                            <a href="form/6_Leadership_and_Management/secondary_form_6.php" class="button" class="btn btn-simple">6. Leadership and Management</a> <br>
+                            <a href="form/7_Physical_Resource_Management/secondary_form_7.php" class="button" class="btn btn-simple">7. Physical Resource Management</a> <br>
+                            <a href="form/8_School_and_Community/secondary_form_8.php" class="button" class="btn btn-simple">8. School and Community</a> <br>
                         </div>
                     </div>
                 </div>

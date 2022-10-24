@@ -38,9 +38,6 @@ if(isset($_SESSION['leadership_6_8']) && !empty($_SESSION['leadership_6_8'])) {
   
 }else{ header("location: leadership6.8.php");}
 
-if(isset($_SESSION['leadership_6_9']) && !empty($_SESSION['leadership_6_9'])) {
-  
-}else{ header("location: leadership6.9.php");}
 
 
 if(isset($_SESSION['leadership_6_10']) && !empty($_SESSION['leadership_6_10'])) {
@@ -242,8 +239,16 @@ if ($result->num_rows > 0) {
 
 <form action="" method="POST">
 <table class="styled-table">
-  <P> Percentage of students who obtained above 40 marks for each of the following subjects (Grade 12-13) 
-Table – 1.2.2.2</P>
+  <h3> 6. Leadership and Management</h3>
+  <p>Awarding marks: Award marks for each indicator according to the following rating scales using the descriptions
+given in the indicators.</p>
+
+<p>01 mark – Immediate development required </p>
+<p>02 marks – Development required</p>
+<p>03 marks - Satisfactory</p>
+<p>04 marks – Good </p>
+<p>05 marks – Very good</p>
+<p>06 marks - Excellent </p>
   <thead>
   <tr>
     <th ></th>

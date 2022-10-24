@@ -1,5 +1,40 @@
-<?php session_start();
+<?php 
+    include "../backend/function_loggedin.php";
     include "../backend/config.php";
+
+
+if(isset($_SESSION['formal3_1']) && !empty($_SESSION['formal3_1'])) {
+  
+}else{ header("location: formal3.1.php");}
+
+if(isset($_SESSION['formal3_2']) && !empty($_SESSION['formal3_2'])) {
+  
+}else{ header("location: formal3.2.php");}
+
+if(isset($_SESSION['formal3_3']) && !empty($_SESSION['formal3_3'])) {
+  
+}else{ header("location: formal3.3.php");}
+
+if(isset($_SESSION['formal3_4']) && !empty($_SESSION['formal3_4'])) {
+  
+}else{ header("location: formal3.4.php");}
+
+if(isset($_SESSION['formal3_5']) && !empty($_SESSION['formal3_5'])) {
+  
+}else{ header("location: formal3.5.php");}
+
+if(isset($_SESSION['formal3_6']) && !empty($_SESSION['formal3_6'])) {
+  
+}else{ header("location: formal3.6.php");}
+
+if(isset($_SESSION['formal3_7']) && !empty($_SESSION['formal3_7'])) {
+  
+}else{ header("location: formal3.7.php");}
+
+
+
+
+
     if(isset($_POST['submit'])){
         $data1 = mysqli_real_escape_string($con,$_POST['marks1']);
         $data2 = mysqli_real_escape_string($con,$_POST['marks2']);
@@ -189,8 +224,16 @@ if ($result->num_rows > 0) {
 
 <form action="" method="POST">
 <table class="styled-table">
-  <P> Percentage of students who obtained above 40 marks for each of the following subjects (Grade 12-13) 
-Table – 1.2.2.2</P>
+  <h3> 3. Classroom Evaluation – Learning, Teaching and Assessment (From Grade 1-13)</h3>
+  <p>Awarding marks: Award marks for each indicator according to the following rating scales using the descriptions
+given in the indicators.</p>
+
+<p>01 mark – Immediate development required </p>
+<p>02 marks – Development required</p>
+<p>03 marks - Satisfactory</p>
+<p>04 marks – Good </p>
+<p>05 marks – Very good</p>
+<p>06 marks - Excellent </p>
   <thead>
   <tr>
     <th ></th>
@@ -235,8 +278,9 @@ ICT…)</td>
       <tr class="active-row" >
     <td></td>
     <td>Total Marks for the criterion</td>
-     <td><input type="number"  autocomplete="off" name="" value="<?php echo $marks1 + $marks2 + $marks3 + $marks4; ?>" disabled ></td>
-    
+     <td><input type="number"  autocomplete="off" name="" value="<?php echo $total_marks = $marks1 + $marks2 + $marks3 + $marks4; ?>" disabled ></td>
+    <?php $_SESSION["formal3_8"] = $total_marks; ?>
+    <?php echo "Marks Total"."  ". $_SESSION["formal3_8"]; ?>
   </tr>
 
 
@@ -267,12 +311,11 @@ obtained</th>
 </thead>
 
   <tr class="active-row" >
-    <th></th>
-    <td><input type="number"  autocomplete="off" name="marks1" value="<?php echo $marks1; ?>" disabled ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $marks2; ?>" disabled ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $marks3; ?>" disabled ></td>
-    <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $marks4; ?>" disabled ></td>
-    
+    <td>1.1.1.1</td> <?php $indicators = 21; ?>
+    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators * 6; ?>" disabled/></td>
+    <td><input type="text" name="data1" autocomplete="off" value="<?php echo $tmarks = $_SESSION['formal3_1'] + $_SESSION['formal3_2'] + $_SESSION['formal3_3'] + $_SESSION['formal3_4'] + $_SESSION['formal3_5']  + $_SESSION['formal3_6']  + $_SESSION['formal3_7']  + $_SESSION['formal3_8']; ?>"  disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = "<?php echo ( $tmarks /( $indicators * 6))*100;?>" disabled /></td>
   </tr>
 
 
@@ -329,6 +372,9 @@ obtained</th>
   </tr>
   </table>
 </form>
+<a  style="float:right; color: black"; href="" >Go to next page</a>
+<a  style="float:left; color: black;" href="formal3.7.php" >Go to previous page</a>
+
 
             <br> <br>
 

@@ -159,6 +159,17 @@ input[type=date]:focus {
 <table class="styled-table">
   <P> Percentage of students who obtained above 40 marks for each of the following subjects (Grade 12-13) 
 Table – 1.2.2.2</P>
+<h3> Student Achievement <br>
+1.2 Secondary Section</h3>
+  <p>Awarding marks: Award marks for each indicator according to the following rating scales using the descriptions
+given in the indicators.</p>
+
+<p>01 mark – Immediate development required </p>
+<p>02 marks – Development required</p>
+<p>03 marks - Satisfactory</p>
+<p>04 marks – Good </p>
+<p>05 marks – Very good</p>
+<p>06 marks - Excellent </p>
   <thead>
   <tr>
     <th></th>
@@ -223,7 +234,8 @@ Table – 1.2.2.2</P>
 </center>
 </form>
 
-    
+  <a  style="float:right; color: black"; href="" >Go to next page</a>
+<a  style="float:left; color: black;" href="" >Go to previous page</a>  
 
 
 

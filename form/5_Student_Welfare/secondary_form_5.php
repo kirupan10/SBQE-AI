@@ -57,9 +57,8 @@ $conn->close();
             </div>
 
                 <div class="tim-title">
-                    <h3> 1.2.2 Progress of term test marks</h3>
-                    <p>  (Prepare the table accordingly if the subjects exceed those listed below)</p>
-                    <p> Percentage of students who obtained above 40 marks for each of the following subjects (Grades 6-11) - Table 1.2. 2.1 </p>
+                    <h3> 5. Student Welfare</h3>
+                    
                     <br />
                         <div id="navbar-dropdown">
                             <nav class="navbar navbar-default">
