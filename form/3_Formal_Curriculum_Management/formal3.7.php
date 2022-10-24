@@ -33,7 +33,7 @@
 }
 
 $marks1 = "";
-$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='3.7.1' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='3.7.1' && School_ID ='{$_SESSION['school_id']}' order by Formal_Curriculum_Management_ID desc LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -46,7 +46,7 @@ if ($result->num_rows > 0) {
 
 
 $marks2 = "";
-$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='3.7.2' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='3.7.2' && School_ID ='{$_SESSION['school_id']}' order by Formal_Curriculum_Management_ID desc LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -58,7 +58,7 @@ if ($result->num_rows > 0) {
 }
 
 $marks3 = "";
-$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='3.7.3' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='3.7.3' && School_ID ='{$_SESSION['school_id']}' order by Formal_Curriculum_Management_ID desc LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -70,7 +70,7 @@ if ($result->num_rows > 0) {
 }
 
 $marks4 = "";
-$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='3.7.4' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM formal_curriculum_management_main WHERE Activity_Number ='3.7.4' && School_ID ='{$_SESSION['school_id']}' order by Formal_Curriculum_Management_ID desc LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {

@@ -580,7 +580,7 @@ given in the indicators.</p>
     <td>Qualified for the Advanced Level Examination from the Ordinary Level Examination</td>
     <td><input type="number"  autocomplete="off" name="marks1" value="<?php echo $percentage_1; ?>" required></td>
     <td><input type="text"  autocomplete="off" disabled value="<?php echo $dmarks_1; ?>"></td>
-    <td><input type="text"  autocomplete="off"disabled value="<?php echo $dstatus_1; ?> "></td>
+    <td><?php echo $dstatus_1; ?> </td>
     <td bgcolor="<?php echo $color_1; ?> "></td>
   </tr>
   <tr class="active-row" >
@@ -588,7 +588,7 @@ given in the indicators.</p>
     <td>Qualified for the university entrance from the Advanced Level Examination(ART Stream)</td>
     <td><input type="number"  autocomplete="off" name="marks2" value="<?php echo $percentage_2; ?>" required ></td>
     <td><input type="text"  autocomplete="off"  value="<?php echo $dmarks_2; ?>" disabled ></td> 
-    <td><input type="text"  autocomplete="off" value="<?php echo $dstatus_2; ?>"  disabled ></td>
+    <td><?php echo $dstatus_2; ?></td>
     <td bgcolor="<?php echo $color_2; ?> "></td>
   </tr>
   <tr class="active-row" >
@@ -597,7 +597,7 @@ given in the indicators.</p>
 Examination (Commerce</td>
     <td><input type="number"  autocomplete="off" name="marks3" value="<?php echo $percentage_3; ?>" required ></td>
     <td><input type="text"  autocomplete="off" value="<?php echo $dmarks_3; ?>" disabled ></td>
-    <td><input type="text"  autocomplete="off" value="<?php echo $dstatus_3; ?>"  disabled></td>
+    <td><?php echo $dstatus_3; ?></td>
     <td bgcolor="<?php echo $color_3; ?> "></td>
   </tr>
   <tr class="active-row" >
@@ -606,7 +606,7 @@ Examination (Commerce</td>
 Examination (Science Stream)</td>
     <td><input type="number"  autocomplete="off" name="marks4" value="<?php echo $percentage_4; ?>" required ></td>
     <td><input type="text"  autocomplete="off" value="<?php echo $dmarks_4; ?>" disabled ></td>
-    <td><input type="text"  autocomplete="off" value="<?php echo $dstatus_4; ?>"  disabled></td>
+    <td><?php echo $dstatus_4; ?></td>
     <td bgcolor="<?php echo $color_4; ?> "></td>
   </tr>
   <tr class="active-row" >
@@ -615,7 +615,7 @@ Examination (Science Stream)</td>
 Examination (Mathematics Stream</td>
     <td><input type="number"  autocomplete="off" name="marks5" value="<?php echo $percentage_5; ?>" required ></td>
     <td><input type="text"  autocomplete="off" value="<?php echo $dmarks_5; ?>" disabled ></td>
-    <td><input type="text"  autocomplete="off" value="<?php echo $dstatus_5; ?>"  disabled></td>
+    <td><?php echo $dstatus_5; ?></td>
     <td bgcolor="<?php echo $color_5; ?> "></td>
   </tr>
   <tr class="active-row" >
@@ -624,7 +624,7 @@ Examination (Mathematics Stream</td>
 Examination (Technological Strea</td>
     <td><input type="number"  autocomplete="off" name="marks6" value="<?php echo $percentage_6; ?>" required ></td>
     <td><input type="text"  autocomplete="off" value="<?php echo $dmarks_6; ?>" disabled ></td>
-    <td><input type="text"  autocomplete="off" value="<?php echo $dstatus_6; ?>"  disabled></td>
+    <td><?php echo $dstatus_6; ?></td>
     <td bgcolor="<?php echo $color_6; ?> "></td>
   </tr>
 </table>

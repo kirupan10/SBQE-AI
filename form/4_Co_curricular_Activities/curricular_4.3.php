@@ -24,7 +24,7 @@
 $marks1 = "";
 $marks2 = "";
 
-$sql = "SELECT  Marks FROM  co_curricular_activities_main WHERE Activity_Number ='4.3.1' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM  co_curricular_activities_main WHERE Activity_Number ='4.3.1' && School_ID ='{$_SESSION['school_id']}' order by Co_curricular_Activities_ID  desc  LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -35,7 +35,7 @@ if ($result->num_rows > 0) {
 
 }
 
-$sql = "SELECT  Marks FROM  co_curricular_activities_main WHERE Activity_Number ='4.3.2' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM  co_curricular_activities_main WHERE Activity_Number ='4.3.2' && School_ID ='{$_SESSION['school_id']}' order by Co_curricular_Activities_ID  desc LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {

@@ -83,6 +83,23 @@ $conn->close();
     font-weight: bold;
     line-height: 25px;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 15%;
+  padding: 40px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
     </style>
     
     <meta charset="utf-8" />
@@ -119,20 +136,50 @@ $conn->close();
                         <h3> Hi, <?php echo $username;?></h3>
                         <h3> School : <?php echo $school_name ;   ?></h3>
                         <p>  Grade : <?php echo $grade ;  ?></p>
-                        <p> Small explaination about what is activities and how to select/use guide <br> lines </p>
+                        <p> </p>
                     </div>
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <a href="select_form.php?form=1" class="button" class="btn btn-simple">1. Student Achievement </a> <br>
-                            <a href="form/2_Learning_Teaching_and_Assessment/secondary_form_2.php" class="button" class="btn btn-simple">2. Learning, Teaching and Assessment</a> <br>
-                            <a href="form/3_Formal_Curriculum_Management/secondary_form_3.php" class="button" class="btn btn-simple">3. Formal Curriculum Management</a> <br>
-                            <a href="form/4_Co_curricular_Activities/secondary_form_4.php" class="button" class="btn btn-simple">4. Co - curricular Activities</a> <br>
-                            <a href="form/5_Student_Welfare/secondary_form_5.php" class="button" class="btn btn-simple">5. Student Welfare</a> <br>
-                            <a href="form/6_Leadership_and_Management/secondary_form_6.php" class="button" class="btn btn-simple">6. Leadership and Management</a> <br>
-                            <a href="form/7_Physical_Resource_Management/secondary_form_7.php" class="button" class="btn btn-simple">7. Physical Resource Management</a> <br>
-                            <a href="form/8_School_and_Community/secondary_form_8.php" class="button" class="btn btn-simple">8. School and Community</a> <br>
-                        </div>
-                    </div>
+                    <h3>Form and Activities</h3>
+
+<div class="row">
+  <div class="column" class="polaroid">
+    <img src=" form.png" alt="Snow" style="width:100%">
+     <a href="select_form.php?form=1">1. Student Achievement </a>
+  </div>
+  <div class="column" class="polaroid" >
+    <img src=" form.png" alt="Forest" style="width:100%">
+    <a href="form/2_Learning_Teaching_and_Assessment/secondary_form_2.php" >2. Learning, Teaching and Assessment</a>
+  </div>
+  <div class="column" class="polaroid">
+    <img src=" form.png" alt="Mountains" style="width:100%">
+    <a href="form/3_Formal_Curriculum_Management/secondary_form_3.php" >3. Formal Curriculum Management</a> <br>
+  </div>
+  <div class="column">
+    <img src=" form.png" alt="Mountains" style="width:100%">
+    <a href="form/4_Co_curricular_Activities/secondary_form_4.php">4. Co - curricular Activities</a> <br>
+  </div>
+  <div class="column">
+    <img src=" form.png" alt="Mountains" style="width:100%">
+    <a href="form/5_Student_Welfare/secondary_form_5.php" >5. Student Welfare</a>
+  </div>
+  <div class="column">
+    <img src=" form.png" alt="Mountains" style="width:100%">
+    <a href="form/6_Leadership_and_Management/secondary_form_6.php">6. Leadership and Management</a> 
+  </div>
+  <div class="column">
+    <img src=" form.png" alt="Mountains" style="width:100%">
+    <a href="form/7_Physical_Resource_Management/secondary_form_7.php" >7. Physical Resource Management</a> 
+  </div>
+  <div class="column">
+    <img src=" form.png" alt="Mountains" style="width:100%">
+    <a href="form/8_School_and_Community/secondary_form_8.php" >8. School and Community</a>
+  </div>
+  
+</div>
+                    <h3>Total Submision form</h3>
+                    <div class="column">
+    <img src=" form.png" alt="Mountains" style="width:100%">
+    <a href="form/Total_Evaluation/Total_Evaluation.php" >Total_Evaluation</a>
+  </div>
                 </div>
                 <br />
             </div> <!-- end menu-dropdown -->

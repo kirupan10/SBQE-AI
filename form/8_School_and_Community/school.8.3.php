@@ -29,7 +29,7 @@ include "../backend/function_loggedin.php";
 }
 
 $marks1 = "";
-$sql = "SELECT  Marks FROM school_community_main WHERE Activity_Number ='8.3.1' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM school_community_main WHERE Activity_Number ='8.3.1' && School_ID ='{$_SESSION['school_id']}' order by School_Community_ID  desc LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -42,7 +42,7 @@ if ($result->num_rows > 0) {
 
 
 $marks2 = "";
-$sql = "SELECT  Marks FROM school_community_main WHERE Activity_Number ='8.3.2' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM school_community_main WHERE Activity_Number ='8.3.2' && School_ID ='{$_SESSION['school_id']}'  order by School_Community_ID  desc LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -54,7 +54,7 @@ if ($result->num_rows > 0) {
 }
 
 $marks3 = "";
-$sql = "SELECT  Marks FROM school_community_main WHERE Activity_Number ='8.3.3' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM school_community_main WHERE Activity_Number ='8.3.3' && School_ID ='{$_SESSION['school_id']}'  order by School_Community_ID  desc LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {

@@ -186,7 +186,7 @@ input[type=date]:focus {
     <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1111" value="<?php echo $totalNumbersOfTheStudents; ?>" required></td>
     <td><input type="number"  autocomplete="off" name="totalPercentageOfTheStudents1111" value="<?php echo $totalPercentageOfTheStudents; ?>" required></td>
     <td><input type="text"  autocomplete="off" disabled value="<?php echo $marks; ?>"></td>
-    <td><input type="text"  autocomplete="off"disabled value="<?php echo $status; ?> "></td>
+    <td><?php echo $status; ?></td>
     <td bgcolor="<?php echo $color1; ?> "></td>
   </tr>
   <tr class="active-row" >
@@ -195,7 +195,7 @@ input[type=date]:focus {
     <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1112" value="<?php echo $totalNumbersOfTheStudents2; ?>" required ></td>
     <td><input type="number"  autocomplete="off" name="totalPercentageOfTheStudents1112"value="<?php echo $totalPercentageOfTheStudents2; ?>" required ></td>
     <td><input type="text"  autocomplete="off"  value="<?php echo $marks2; ?>" disabled ></td> 
-    <td><input type="text"  autocomplete="off" value="<?php echo $status2; ?>"  disabled ></td>
+    <td><?php echo $status2; ?></td>
     <td bgcolor="<?php echo $color2; ?> "></td>
   </tr>
   <tr class="active-row" >
@@ -204,7 +204,7 @@ input[type=date]:focus {
     <td><input type="number"  autocomplete="off" name="totalNumbersOfTheStudents1113" value="<?php echo $totalNumbersOfTheStudents3; ?>" required ></td>
     <td><input type="number"  autocomplete="off" name="totalPercentageOfTheStudents1113" value="<?php echo $totalPercentageOfTheStudents3; ?>" required ></td>
     <td><input type="text"  autocomplete="off" value="<?php echo $marks3; ?>" disabled ></td>
-    <td><input type="text"  autocomplete="off" value="<?php echo $status3; ?>"  disabled></td>
+    <td><?php echo $status3; ?></td>
     <td bgcolor="<?php echo $color3; ?> "></td>
   </tr>
 </table>
@@ -239,7 +239,7 @@ input[type=date]:focus {
     <td><input type="number"  autocomplete="off" name="Students_Total_2nd_Form" value="<?php echo $students_number_total; ?>" required ></td>
     <td><input type="number"  autocomplete="off" name="Students_Percentage_2nd_Form" value="<?php echo $students_percentage_total; ?>" required ></td>
     <td><input type="text"  autocomplete="off" value="<?php echo $markstudents; ?>" disabled ></td>
-    <td><input type="text"  autocomplete="off" value="<?php echo $statusstudents; ?>"  disabled></td>
+    <td><?php echo $statusstudents; ?></td>
     <td bgcolor="<?php echo $color4; ?> "></td>
   </tr>
 </table>
@@ -269,7 +269,10 @@ obtained</th>
     <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled /></td>
     <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled/></td>
     <td><input type="text" name="data1" autocomplete="off" value="<?php echo $total = $marks + $marks2 + $marks3 + $markstudents; ?>"  disabled /></td>
-    <td><input type="text" name="data1" autocomplete="off" value = "<?php echo ($total /( $indicators * 6))*100;?>" disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = "<?php $n = ($total /( $indicators * 6))*100; 
+    echo substr($n, 0, 2);
+
+  ?>" disabled /></td>
   </tr>
 </table>
 

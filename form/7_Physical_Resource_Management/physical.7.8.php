@@ -71,7 +71,7 @@ if(isset($_SESSION['physical.7_7']) && !empty($_SESSION['physical.7_7'])) {
 }
 
 $marks1 = "";
-$sql = "SELECT  Marks FROM physical_resource_management_main WHERE Activity_Number ='7.8.1' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM physical_resource_management_main WHERE Activity_Number ='7.8.1' && School_ID ='{$_SESSION['school_id']}' order by Physical_Resource_Management_ID desc LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -84,7 +84,7 @@ if ($result->num_rows > 0) {
 
 
 $marks2 = "";
-$sql = "SELECT  Marks FROM physical_resource_management_main WHERE Activity_Number ='7.8.2' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM physical_resource_management_main WHERE Activity_Number ='7.8.2' && School_ID ='{$_SESSION['school_id']}' order by Physical_Resource_Management_ID desc LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -96,7 +96,7 @@ if ($result->num_rows > 0) {
 }
 
 $marks3 = "";
-$sql = "SELECT  Marks FROM physical_resource_management_main WHERE Activity_Number ='7.8.3' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM physical_resource_management_main WHERE Activity_Number ='7.8.3' && School_ID ='{$_SESSION['school_id']}' order by Physical_Resource_Management_ID desc LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -108,7 +108,7 @@ if ($result->num_rows > 0) {
 }
 
 $marks4 = "";
-$sql = "SELECT  Marks FROM physical_resource_management_main WHERE Activity_Number ='7.8.4' && School_ID ='{$_SESSION['school_id']}'  LIMIT 1 ";
+$sql = "SELECT  Marks FROM physical_resource_management_main WHERE Activity_Number ='7.8.4' && School_ID ='{$_SESSION['school_id']}' order by Physical_Resource_Management_ID desc LIMIT 1 ";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
