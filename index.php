@@ -142,35 +142,35 @@ $conn->close();
 
 <div class="row">
   <div class="column" class="polaroid">
-    <img src=" form.png" alt="Snow" style="width:100%">
+    <img src=" assets/img/form.png" alt="Snow" style="width:100%">
      <a href="select_form.php?form=1">1. Student Achievement </a>
   </div>
   <div class="column" class="polaroid" >
-    <img src=" form.png" alt="Forest" style="width:100%">
+    <img src=" assets/img/form.png" alt="Forest" style="width:100%">
     <a href="form/2_Learning_Teaching_and_Assessment/secondary_form_2.php" >2. Learning, Teaching and Assessment</a>
   </div>
   <div class="column" class="polaroid">
-    <img src=" form.png" alt="Mountains" style="width:100%">
+    <img src="assets/img/form.png" alt="Mountains" style="width:100%">
     <a href="form/3_Formal_Curriculum_Management/secondary_form_3.php" >3. Formal Curriculum Management</a> <br>
   </div>
   <div class="column">
-    <img src=" form.png" alt="Mountains" style="width:100%">
+    <img src="assets/img/form.png" alt="Mountains" style="width:100%">
     <a href="form/4_Co_curricular_Activities/secondary_form_4.php">4. Co - curricular Activities</a> <br>
   </div>
   <div class="column">
-    <img src=" form.png" alt="Mountains" style="width:100%">
+    <img src="assets/img/form.png" alt="Mountains" style="width:100%">
     <a href="form/5_Student_Welfare/secondary_form_5.php" >5. Student Welfare</a>
   </div>
   <div class="column">
-    <img src=" form.png" alt="Mountains" style="width:100%">
+    <img src="assets/img/form.png" alt="Mountains" style="width:100%">
     <a href="form/6_Leadership_and_Management/secondary_form_6.php">6. Leadership and Management</a> 
   </div>
   <div class="column">
-    <img src=" form.png" alt="Mountains" style="width:100%">
+    <img src="assets/img/form.png" alt="Mountains" style="width:100%">
     <a href="form/7_Physical_Resource_Management/secondary_form_7.php" >7. Physical Resource Management</a> 
   </div>
   <div class="column">
-    <img src=" form.png" alt="Mountains" style="width:100%">
+    <img src="assets/img/form.png" alt="Mountains" style="width:100%">
     <a href="form/8_School_and_Community/secondary_form_8.php" >8. School and Community</a>
   </div>
   
