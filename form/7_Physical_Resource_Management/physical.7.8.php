@@ -437,11 +437,12 @@ obtained</th>
 </thead>
 
    <tr class="active-row" >
-    <td>1.1.1.1</td> <?php $indicators = 21; ?>
+    <td>1.1.1.1</td> <?php $indicators = 26; ?>
     <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled /></td>
     <td><input type="text" name="data1" autocomplete="off" value = " <?php echo  $t_indicator = $indicators * 6; ?>" disabled/></td>
     <td><input type="text" name="data1" autocomplete="off" value="<?php echo $tmarks = $_SESSION['physical.7_1'] + $_SESSION['physical.7_2'] + $_SESSION['physical.7_3'] + $_SESSION['physical.7_4'] + $_SESSION['physical.7_5'] + $_SESSION['physical.7_6'] + $_SESSION['physical.7_7'] + $_SESSION['physical.7_8']; ?>"  disabled /></td>
-    <td><input type="text" name="data1" autocomplete="off" value = "<?php echo ( $tmarks /$t_indicator)*100;?>" disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = "<?php echo $physical = ( $tmarks /$t_indicator)*100;?>" disabled /></td>
+     <? $_SESSION['physical'] = $physical; ?>
   </tr>
 
 

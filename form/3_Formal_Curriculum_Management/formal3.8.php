@@ -42,7 +42,7 @@ if(isset($_SESSION['formal3_7']) && !empty($_SESSION['formal3_7'])) {
         $data4 = mysqli_real_escape_string($con,$_POST['marks4']);
 
         if ($data1 != "" && $data2 != "" && $data3 != "" && $data4 != ""  ){
-            echo "Hello Debug Test1";
+            
             $sql_insert_datarow_1 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','3.8.1',$data1,'{$_SESSION['username']}')";
 
             $sql_insert_datarow_2 = "INSERT INTO formal_curriculum_management_main (School_ID,Activity_Number,Marks,Session_Name) VALUE ('{$_SESSION['school_id']}','3.8.2',$data2,'{$_SESSION['username']}')";
@@ -175,7 +175,7 @@ if ($result->num_rows > 0) {
         
          $evaluator_name_value = $row["UserInputName"];   // The value we usually set is the primary key
          $evaluator_date = $row["Time_submit"]; }// The value we usually set is the primary key
-        echo("Hello world ".$evaluator_name_value. " " . $evaluator_date);
+         // echo("Hello world ".$evaluator_name_value. " " . $evaluator_date);
          
        } else { echo "error"; } // While loop must be terminated 
 
@@ -311,11 +311,12 @@ obtained</th>
 </thead>
 
   <tr class="active-row" >
-    <td>1.1.1.1</td> <?php $indicators = 21; ?>
+    <td>1.1.1.1</td> <?php $indicators = 25; ?>
     <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled /></td>
     <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators * 6; ?>" disabled/></td>
     <td><input type="text" name="data1" autocomplete="off" value="<?php echo $tmarks = $_SESSION['formal3_1'] + $_SESSION['formal3_2'] + $_SESSION['formal3_3'] + $_SESSION['formal3_4'] + $_SESSION['formal3_5']  + $_SESSION['formal3_6']  + $_SESSION['formal3_7']  + $_SESSION['formal3_8']; ?>"  disabled /></td>
-    <td><input type="text" name="data1" autocomplete="off" value = "<?php echo ( $tmarks /( $indicators * 6))*100;?>" disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = "<?php echo $formal3 = ( $tmarks /( $indicators * 6))*100;?>" disabled /></td>
+    <? $_SESSION['formal3_7'] = $formal3; ?>
   </tr>
 
 

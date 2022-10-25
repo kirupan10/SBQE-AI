@@ -394,9 +394,9 @@ obtained</th>
 
 
   <tr class="active-row" >
-    <td>1.1.1.1</td> <?php $indicators = 21; ?>
+    <td>1.1.1.1</td> <?php $indicators = 22; ?>
     <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled /></td>
-    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled/></td>
+    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators*6; ?>" disabled/></td>
     <td><input type="text" name="data1" autocomplete="off" value="<?php echo $tmarks = $_SESSION['walfare_total_5_1'] + $_SESSION['walfare_total_5_2'] + $_SESSION['walfare_total_5_3'] + $_SESSION['walfare_total_5_4'] + $_SESSION['walfare_total_5_5'] + $_SESSION['walfare_total_5_6'] + $_SESSION['walfare_total_5_7'] + $_SESSION['walfare_total_5_8'] + $_SESSION['walfare_total_5_9']; ?>"  disabled /></td>
     <td><input type="text" name="data1" autocomplete="off" value = "<?php echo ( $tmarks /( $indicators * 6))*100;?>" disabled /></td>
   </tr>

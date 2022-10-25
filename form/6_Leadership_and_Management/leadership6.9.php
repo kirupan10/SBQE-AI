@@ -317,11 +317,12 @@ obtained</th>
 </thead>
 
   tr class="active-row" >
-    <td>1.1.1.1</td> <?php $indicators = 21; ?>
+    <td>1.1.1.1</td> <?php $indicators = 45; ?>
     <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled /></td>
-    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled/></td>
+    <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators*6; ?>" disabled/></td>
     <td><input type="text" name="data1" autocomplete="off" value="<?php echo $tmarks = $_SESSION['leadership6_1'] + $_SESSION['leadership6_2'] + $_SESSION['leadership6_3'] + $_SESSION['leadership6_4'] + $_SESSION['leadership6_5'] + $_SESSION['leadership6_6'] + $_SESSION['leadership6_7'] + $_SESSION['leadership6_8'] + $_SESSION['leadership6_9'] + $_SESSION['leadership6_10'] + $_SESSION['leadership6_11'] + $_SESSION['leadership6_12'] + $_SESSION['leadership6_13'] + $_SESSION['leadership6_14'] + $_SESSION['leadership6_15'] + $_SESSION['leadership6_16']; ?>"  disabled /></td>
-    <td><input type="text" name="data1" autocomplete="off" value = "<?php echo ( $tmarks /( $indicators * 6))*100;?>" disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = "<?php echo $leadership6 = ( $tmarks /( $indicators * 6))*100;?>" disabled /></td>
+    <? $_SESSION['leadership6'] = $leadership6; ?>
   </tr>
 
 

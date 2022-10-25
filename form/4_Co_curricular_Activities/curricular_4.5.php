@@ -364,7 +364,7 @@ obtained</th>
 </thead>
 
   <tr class="active-row" >
-    <td>1.1.1.1</td> <?php $indicators = 21; ?>
+    <td>1.1.1.1</td> <?php $indicators = 14; ?>
     <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled /></td>
     <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators * 6; ?>" disabled/></td>
     <td><input type="text" name="data1" autocomplete="off" value="<?php echo $tmarks = $_SESSION['curricular_4_1'] + $_SESSION['curricular_4_2'] + $_SESSION['curricular_4_3'] + $_SESSION['curricular_4_4'] + $_SESSION['curricular_4_5']; ?>"  disabled /></td>

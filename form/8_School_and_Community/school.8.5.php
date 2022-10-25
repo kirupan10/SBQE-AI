@@ -263,11 +263,12 @@ obtained</th>
 </thead>
 
   <tr class="active-row" >
-    <td>1.1.1.1</td> <?php $indicators = 21; ?>
+    <td>1.1.1.1</td> <?php $indicators = 13; ?>
     <td><input type="text" name="data1" autocomplete="off" value = " <?php echo $indicators; ?>" disabled /></td>
     <td><input type="text" name="data1" autocomplete="off" value = " <?php echo  $t_indicator = $indicators * 6; ?>" disabled/></td>
     <td><input type="text" name="data1" autocomplete="off" value="<?php echo $tmarks = $_SESSION['school_8.1'] + $_SESSION['school_8.2'] + $_SESSION['school_8.3'] + $_SESSION['school_8.4'] + $_SESSION['school_8.5']; ?>"  disabled /></td>
-    <td><input type="text" name="data1" autocomplete="off" value = "<?php echo ( $tmarks /$t_indicator)*100;?>" disabled /></td>
+    <td><input type="text" name="data1" autocomplete="off" value = "<?php echo $school8 = ( $tmarks /$t_indicator)*100;?>" disabled /></td>
+    <? $_SESSION['school8'] = $school8; ?>
   </tr>
 
 
